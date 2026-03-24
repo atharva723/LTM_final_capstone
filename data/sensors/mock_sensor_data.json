@@ -1,0 +1,139 @@
+{
+  "CNC-M01": {
+    "machine_id": "CNC-M01",
+    "machine_name": "CNC Milling Machine",
+    "location": "Machining Cell A",
+    "status": "Running",
+    "operator": "Priya Sharma",
+    "shift": "Night (10PM-6AM)",
+    "timestamp": "2026-03-24 11:37:54",
+    "operating_hours_total": 11863,
+    "hours_since_last_pm": 37,
+    "sensor_readings": {
+      "temperature_c": 45.5,
+      "vibration_mm_s": 0.95,
+      "spindle_rpm": 4706.8,
+      "coolant_flow_l_min": 8.61,
+      "power_kw": 5.3
+    },
+    "sensor_statuses": {
+      "temperature_c": "NORMAL",
+      "vibration_mm_s": "NORMAL",
+      "spindle_rpm": "NORMAL",
+      "coolant_flow_l_min": "NORMAL",
+      "power_kw": "NORMAL"
+    },
+    "active_error_codes": [],
+    "last_maintenance_date": "2026-01-02"
+  },
+  "HYD-P02": {
+    "machine_id": "HYD-P02",
+    "machine_name": "Hydraulic Pump Unit",
+    "location": "Press & Forming Cell",
+    "status": "Fault",
+    "operator": "Anil Verma",
+    "shift": "Morning (6AM-2PM)",
+    "timestamp": "2026-03-24 11:37:54",
+    "operating_hours_total": 3519,
+    "hours_since_last_pm": 399,
+    "sensor_readings": {
+      "pressure_bar": 263.0,
+      "temperature_c": 40.51,
+      "flow_l_min": 68.57,
+      "motor_current_a": 58.06,
+      "vibration_mm_s": 1.35
+    },
+    "sensor_statuses": {
+      "pressure_bar": "WARNING",
+      "temperature_c": "NORMAL",
+      "flow_l_min": "NORMAL",
+      "motor_current_a": "ALARM",
+      "vibration_mm_s": "NORMAL"
+    },
+    "active_error_codes": [
+      "E14"
+    ],
+    "last_maintenance_date": "2026-03-02"
+  },
+  "CVB-003": {
+    "machine_id": "CVB-003",
+    "machine_name": "Conveyor Belt System",
+    "location": "Material Handling & Assembly",
+    "status": "Running",
+    "operator": "Mohan Das",
+    "shift": "Morning (6AM-2PM)",
+    "timestamp": "2026-03-24 11:37:54",
+    "operating_hours_total": 13543,
+    "hours_since_last_pm": 81,
+    "sensor_readings": {
+      "belt_speed_m_s": 0.84,
+      "motor_temp_c": 31.74,
+      "motor_current_a": 7.5,
+      "belt_tension_n": 831.52,
+      "vibration_mm_s": 1.37
+    },
+    "sensor_statuses": {
+      "belt_speed_m_s": "NORMAL",
+      "motor_temp_c": "NORMAL",
+      "motor_current_a": "NORMAL",
+      "belt_tension_n": "NORMAL",
+      "vibration_mm_s": "NORMAL"
+    },
+    "active_error_codes": [],
+    "last_maintenance_date": "2026-03-09"
+  },
+  "BLR-004": {
+    "machine_id": "BLR-004",
+    "machine_name": "Industrial Steam Boiler",
+    "location": "Utilities & Steam Generation",
+    "status": "Running",
+    "operator": "Rajesh Kumar",
+    "shift": "Night (10PM-6AM)",
+    "timestamp": "2026-03-24 11:37:54",
+    "operating_hours_total": 12403,
+    "hours_since_last_pm": 185,
+    "sensor_readings": {
+      "steam_pressure_bar": 9.32,
+      "water_level_pct": 74.21,
+      "flue_gas_temp_c": 202.81,
+      "fuel_pressure_mbar": 183.41,
+      "feedwater_temp_c": 70.33
+    },
+    "sensor_statuses": {
+      "steam_pressure_bar": "NORMAL",
+      "water_level_pct": "NORMAL",
+      "flue_gas_temp_c": "NORMAL",
+      "fuel_pressure_mbar": "NORMAL",
+      "feedwater_temp_c": "WARNING"
+    },
+    "active_error_codes": [],
+    "last_maintenance_date": "2026-01-05"
+  },
+  "ROB-005": {
+    "machine_id": "ROB-005",
+    "machine_name": "6-Axis Robotic Arm",
+    "location": "Welding & Assembly Automation",
+    "status": "Running",
+    "operator": "Anil Verma",
+    "shift": "Afternoon (2PM-10PM)",
+    "timestamp": "2026-03-24 11:37:54",
+    "operating_hours_total": 6386,
+    "hours_since_last_pm": 77,
+    "sensor_readings": {
+      "joint_temp_c": 29.9,
+      "motor_current_a": 17.83,
+      "tcp_speed_mm_s": 1046.81,
+      "air_pressure_bar": 5.84,
+      "vibration_mm_s": 0.42
+    },
+    "sensor_statuses": {
+      "joint_temp_c": "NORMAL",
+      "motor_current_a": "NORMAL",
+      "tcp_speed_mm_s": "NORMAL",
+      "air_pressure_bar": "NORMAL",
+      "vibration_mm_s": "NORMAL"
+    },
+    "active_error_codes": [],
+    "last_maintenance_date": "2026-02-15"
+  }
+}

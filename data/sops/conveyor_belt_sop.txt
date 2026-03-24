@@ -1,0 +1,101 @@
+STANDARD OPERATING PROCEDURE
+Machine: Conveyor Belt System
+Machine ID: CVB-003
+Document No: SOP-CVB-003
+Version: 1.2
+Effective Date: 2024-01-20
+Department: Material Handling & Assembly
+
+=========================================================
+1. PURPOSE
+=========================================================
+This SOP governs the safe startup, operation, and shutdown of the main assembly
+conveyor belt (CVB-003) used to transport components between workstations.
+
+=========================================================
+2. REQUIRED PPE
+=========================================================
+- Safety glasses
+- Steel-toed boots
+- High-visibility vest (mandatory near conveyor)
+- Gloves prohibited near moving belt/rollers (entanglement hazard)
+
+=========================================================
+3. PRE-STARTUP CHECKLIST
+=========================================================
+Step 1: Walk the entire conveyor length — check for objects on belt.
+Step 2: Verify all emergency pull-cord stops are unobstructed and functional.
+Step 3: Check belt tension — must not sag > 20mm at center span.
+Step 4: Inspect belt surface for cuts, fraying, or tracking issues.
+Step 5: Check all roller bearings for noise or stiffness.
+Step 6: Confirm all guards and covers are in place.
+Step 7: Verify drive gearbox oil level.
+Step 8: Ensure no personnel are in the conveyor path.
+
+=========================================================
+4. STARTUP PROCEDURE
+=========================================================
+Step 1: Sound alarm horn (3-second warning) before starting.
+Step 2: Turn control panel key switch to ON.
+Step 3: Press START button — belt accelerates to set speed over 5 seconds.
+Step 4: Observe belt tracking for first 2 minutes — must run centered.
+Step 5: Adjust tracking if belt drifts > 10mm to either side.
+Step 6: Verify conveyor speed on HMI (set per production order).
+
+=========================================================
+5. MONITORING PARAMETERS
+=========================================================
+| Parameter          | Normal Range     | Warning          | Alarm            |
+|--------------------|------------------|------------------|------------------|
+| Belt Speed         | 0.2 – 1.5 m/s    | > 1.6 m/s        | > 1.8 m/s        |
+| Motor Temperature  | 20 – 70 °C       | > 75 °C          | > 85 °C          |
+| Motor Current      | 5 – 25 A         | > 28 A           | > 35 A           |
+| Belt Tension       | 800 – 1200 N     | < 600 N          | < 400 N          |
+| Vibration (drive)  | 0.3 – 2.0 mm/s  | > 3.0 mm/s       | > 5.0 mm/s       |
+| Roller Temp        | Ambient to 50 °C | > 55 °C          | > 65 °C          |
+
+=========================================================
+6. BELT TRACKING ADJUSTMENT
+=========================================================
+If belt drifts to LEFT:
+  - Tighten RIGHT tracking bolt (tail pulley) by 1/4 turn.
+  - Wait 30 seconds and observe. Repeat if needed.
+
+If belt drifts to RIGHT:
+  - Tighten LEFT tracking bolt (tail pulley) by 1/4 turn.
+  - Maximum adjustment: 3 full turns from neutral position.
+  - If tracking cannot be corrected: stop belt, call maintenance.
+
+=========================================================
+7. SHUTDOWN PROCEDURE
+=========================================================
+Step 1: Clear all products from conveyor belt.
+Step 2: Press STOP button — belt decelerates and stops.
+Step 3: Turn key switch to OFF.
+Step 4: Apply lockout to main control panel.
+Step 5: Clean belt surface and remove any spillage.
+Step 6: Record runtime hours in logbook.
+
+=========================================================
+8. EMERGENCY STOP PROCEDURES
+=========================================================
+- Pull Cord: Pull red cord along conveyor side — immediate stop.
+- E-STOP Button: Press red mushroom button on control panel.
+- After E-STOP: Do not restart until cause is identified and cleared.
+- Entanglement: Do NOT try to pull free. Hit E-STOP. Call emergency services.
+
+=========================================================
+9. COMMON ERROR CODES
+=========================================================
+E21 — Belt Slip: Belt slipping on drive pulley. Check tension and loading.
+E22 — Motor Overload: Overloaded belt. Reduce product load or speed.
+E23 — Belt Misalignment: Belt tracking off. Stop and adjust tail pulley.
+E24 — Roller Jam: Debris in roller. Clear belt and inspect rollers.
+E25 — Drive Gearbox Fault: Oil low or gearbox overheating. Stop and inspect.
+
+=========================================================
+10. REVISION HISTORY
+=========================================================
+v1.0 — Initial release
+v1.1 — Added belt tracking procedure
+v1.2 — Updated PPE section — glove prohibition added

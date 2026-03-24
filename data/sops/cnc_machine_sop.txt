@@ -1,0 +1,108 @@
+STANDARD OPERATING PROCEDURE
+Machine: CNC Milling Machine
+Machine ID: CNC-M01
+Document No: SOP-CNC-001
+Version: 2.1
+Effective Date: 2024-01-15
+Department: Machining Cell A
+
+=========================================================
+1. PURPOSE
+=========================================================
+This SOP defines the standard operating procedure for the CNC Milling Machine (CNC-M01)
+to ensure safe, consistent, and high-quality machining operations.
+
+=========================================================
+2. SCOPE
+=========================================================
+Applies to all operators, maintenance personnel, and supervisors working with CNC-M01
+in Machining Cell A.
+
+=========================================================
+3. RESPONSIBILITIES
+=========================================================
+- Operator: Follow startup, operation, and shutdown procedures.
+- Shift Supervisor: Verify machine readiness and sign off on job setup.
+- Maintenance Engineer: Perform scheduled PM and respond to fault alerts.
+
+=========================================================
+4. REQUIRED PPE
+=========================================================
+- Safety glasses (mandatory at all times)
+- Steel-toed boots
+- Cut-resistant gloves (during tool changes only)
+- Hearing protection (during continuous cutting operations > 30 min)
+- NO loose clothing, jewelry, or gloves during active spindle rotation
+
+=========================================================
+5. PRE-STARTUP CHECKLIST
+=========================================================
+Step 1: Inspect machine for visible damage, loose guards, or debris.
+Step 2: Check coolant level — must be above MIN line on reservoir.
+Step 3: Verify spindle oil level in the lubrication sight glass.
+Step 4: Check that all axis limit switches are unobstructed.
+Step 5: Ensure emergency stop (E-STOP) button is functional — press and release test.
+Step 6: Confirm tool holders are clean and tool offsets are loaded.
+Step 7: Check workpiece clamping — torque must be within spec per job card.
+Step 8: Verify the correct G-code program is loaded and reviewed.
+
+=========================================================
+6. STARTUP PROCEDURE
+=========================================================
+Step 1: Turn main power switch ON (located on rear panel).
+Step 2: Wait for CNC controller to boot — approx. 45 seconds.
+Step 3: Press "MACHINE HOME" button — all axes will return to zero.
+Step 4: Load the job-specific tool library from the controller menu.
+Step 5: Set workpiece zero (G54 offset) using edge finder or probe.
+Step 6: Run a dry cycle (Feed Hold ON) to verify tool paths.
+Step 7: Set spindle speed per job card (typical range: 500–8000 RPM).
+Step 8: Begin machining — monitor first pass closely.
+
+=========================================================
+7. DURING OPERATION — MONITORING PARAMETERS
+=========================================================
+| Parameter         | Normal Range       | Warning Threshold  | Alarm Threshold   |
+|-------------------|--------------------|--------------------|-------------------|
+| Spindle RPM       | 500 – 8000 RPM     | > 8200 RPM         | > 8500 RPM        |
+| Spindle Temp      | 20 – 65 °C         | > 70 °C            | > 80 °C           |
+| Vibration         | 0.5 – 2.5 mm/s    | > 3.5 mm/s         | > 5.0 mm/s        |
+| Feed Rate         | Per G-code         | ±10% deviation     | ±20% deviation    |
+| Coolant Flow      | 8 – 15 L/min       | < 6 L/min          | < 3 L/min         |
+| Power Consumption | 2 – 15 kW          | > 18 kW            | > 22 kW           |
+
+=========================================================
+8. SHUTDOWN PROCEDURE
+=========================================================
+Step 1: Complete current machining cycle — do not interrupt mid-pass.
+Step 2: Return all axes to home position.
+Step 3: Turn off spindle and coolant pump.
+Step 4: Remove workpiece and clean fixture.
+Step 5: Clean machine bed — remove chips using brush or chip conveyor.
+Step 6: Apply rust-preventive oil on exposed guideways.
+Step 7: Power off CNC controller.
+Step 8: Turn main power switch OFF.
+Step 9: Complete job log and update machine logbook.
+
+=========================================================
+9. EMERGENCY PROCEDURES
+=========================================================
+- Tool Breakage: Press E-STOP immediately. Do not reach inside machine.
+- Fire: Press E-STOP, activate fire extinguisher (CO2 type only), evacuate, call supervisor.
+- Coolant Leak: Press E-STOP, isolate power, contain spill with absorbent.
+- Operator Injury: Press E-STOP, call first aid, do not move injured person.
+
+=========================================================
+10. COMMON ERROR CODES — QUICK REFERENCE
+=========================================================
+E01 — Spindle Overload: Reduce feed rate, inspect tool.
+E02 — Axis Drive Fault: Check servo drive panel, reset and home.
+E03 — Coolant Low: Refill coolant tank immediately.
+E04 — Door Interlock Open: Close machine door fully.
+E05 — Tool Length Error: Re-measure and update tool offset.
+
+=========================================================
+11. REVISION HISTORY
+=========================================================
+v1.0 — Initial release
+v2.0 — Added monitoring parameter table
+v2.1 — Updated PPE requirements and emergency procedures

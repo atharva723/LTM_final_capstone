@@ -1,0 +1,100 @@
+STANDARD OPERATING PROCEDURE
+Machine: Hydraulic Pump Unit
+Machine ID: HYD-P02
+Document No: SOP-HYD-002
+Version: 1.4
+Effective Date: 2024-02-01
+Department: Press & Forming Cell
+
+=========================================================
+1. PURPOSE
+=========================================================
+This SOP defines safe operating procedures for the Hydraulic Pump Unit (HYD-P02)
+used in press and forming operations.
+
+=========================================================
+2. REQUIRED PPE
+=========================================================
+- Safety glasses
+- Oil-resistant gloves
+- Steel-toed boots
+- Face shield (when breaking hydraulic connections)
+- Flame-retardant coveralls when working near hot hydraulic lines
+
+=========================================================
+3. PRE-STARTUP CHECKLIST
+=========================================================
+Step 1: Check hydraulic fluid level — must be between MIN and MAX on sight glass.
+Step 2: Inspect all hydraulic hoses for cracks, bulges, or abrasion marks.
+Step 3: Check for fluid leaks around pump, valves, and cylinder connections.
+Step 4: Verify pressure relief valve is set to correct pressure (per job card).
+Step 5: Confirm filter indicator — replace filter if indicator is in RED zone.
+Step 6: Check motor coupling for wear or looseness.
+Step 7: Verify all hydraulic cylinder pins are secured.
+
+=========================================================
+4. STARTUP PROCEDURE
+=========================================================
+Step 1: Turn main isolator switch ON.
+Step 2: Start motor at low pressure (unloaded) — allow 2-minute warm-up.
+Step 3: Gradually increase system pressure to operating level.
+Step 4: Check for abnormal noise (knocking or whining = air in system).
+Step 5: Verify actuator movement is smooth in both directions.
+Step 6: Confirm pressure gauge reads within operating range.
+
+=========================================================
+5. MONITORING PARAMETERS
+=========================================================
+| Parameter            | Normal Range     | Warning           | Alarm             |
+|----------------------|------------------|-------------------|-------------------|
+| System Pressure      | 100 – 250 bar    | > 260 bar         | > 280 bar         |
+| Fluid Temperature    | 35 – 60 °C       | > 65 °C           | > 75 °C           |
+| Motor Current        | 10 – 40 A        | > 45 A            | > 55 A            |
+| Flow Rate            | 20 – 80 L/min    | < 15 L/min        | < 8 L/min         |
+| Vibration (pump)     | 0.5 – 3.0 mm/s  | > 4.0 mm/s        | > 6.0 mm/s        |
+| Filter Differential  | < 3.5 bar        | > 3.5 bar         | > 5.0 bar         |
+
+=========================================================
+6. SHUTDOWN PROCEDURE
+=========================================================
+Step 1: Reduce system pressure to zero (open unloading valve).
+Step 2: Retract all cylinders to home position.
+Step 3: Stop motor.
+Step 4: Turn isolator switch OFF and lock out (LOTO).
+Step 5: Allow system to cool before performing any maintenance.
+Step 6: Log hours of operation in maintenance logbook.
+
+=========================================================
+7. LOCKOUT/TAGOUT (LOTO) PROCEDURE
+=========================================================
+WARNING: NEVER work on hydraulic system under pressure.
+Step 1: Shut down pump motor.
+Step 2: Turn isolator switch to OFF and apply personal lock.
+Step 3: Attach RED "DO NOT OPERATE" tag to isolator.
+Step 4: Release stored pressure using manual unloading valve.
+Step 5: Verify zero pressure on gauge before proceeding.
+Step 6: Place safety blocks under any suspended cylinder loads.
+
+=========================================================
+8. EMERGENCY PROCEDURES
+=========================================================
+- High Pressure Leak (pinhole): EVACUATE immediately — fluid injection injuries are fatal.
+  Do not touch the leak. Depressurize remotely. Call maintenance supervisor.
+- Fluid Fire: CO2 or dry powder extinguisher only — never water.
+- Motor Overload Trip: Check for blocked cylinder, overpressure, or overloaded circuit.
+
+=========================================================
+9. COMMON ERROR CODES
+=========================================================
+E11 — Overpressure: System pressure exceeded limit. Check relief valve.
+E12 — Low Fluid Level: Refill reservoir with approved fluid (ISO VG 46).
+E13 — High Fluid Temperature: Check cooler, increase cooling flow.
+E14 — Filter Blocked: Replace hydraulic filter element.
+E15 — Motor Overload: Check actuator for mechanical jam.
+
+=========================================================
+10. REVISION HISTORY
+=========================================================
+v1.0 — Initial release
+v1.3 — Added LOTO procedure
+v1.4 — Updated monitoring parameters table

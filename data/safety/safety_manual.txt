@@ -1,0 +1,200 @@
+PLANT SAFETY GUIDELINES & PPE MANUAL
+Document No: SAF-001
+Version: 2.0
+Department: Health, Safety & Environment (HSE)
+Effective Date: 2024-01-01
+
+=========================================================
+1. GENERAL PLANT SAFETY RULES
+=========================================================
+1.  All personnel must wear mandatory PPE at all times in production areas.
+2.  No unauthorized personnel are permitted in restricted zones.
+3.  All incidents, near misses, and unsafe conditions must be reported immediately.
+4.  Mobile phones are prohibited in machining and welding areas.
+5.  Food and drink are not permitted in production areas.
+6.  Running is prohibited in the plant at all times.
+7.  All spills must be cleaned up immediately — slip hazard.
+8.  Overhead crane operation requires certification — no unauthorized use.
+9.  Safety signs must be obeyed at all times.
+10. Exits and fire points must remain unobstructed at all times.
+
+=========================================================
+2. PPE REQUIREMENTS BY AREA
+=========================================================
+
+AREA: Machining Cell (CNC Zone)
+Required PPE:
+  - Safety glasses (ANSI Z87.1 rated) — MANDATORY
+  - Steel-toed safety boots (S3 rated) — MANDATORY
+  - Cut-resistant gloves (during tool handling only)
+  - Hearing protection (> 85 dB areas — use sound level meter to check)
+PROHIBITED PPE:
+  - Loose gloves near rotating spindles (entanglement hazard)
+  - Open-toe or canvas shoes
+  - Loose clothing or dangling jewelry
+
+AREA: Press & Hydraulic Cell
+Required PPE:
+  - Safety glasses — MANDATORY
+  - Steel-toed boots — MANDATORY
+  - Oil-resistant gloves
+  - Face shield (when disconnecting hydraulic lines)
+  - FR (flame-retardant) coveralls (near hot hydraulic lines)
+
+AREA: Conveyor & Material Handling
+Required PPE:
+  - Safety glasses — MANDATORY
+  - Steel-toed boots — MANDATORY
+  - High-visibility (Hi-Vis) vest — MANDATORY
+PROHIBITED PPE:
+  - Gloves near moving conveyor (entanglement hazard)
+
+AREA: Boiler Room
+Required PPE:
+  - Safety glasses — MANDATORY
+  - Steel-toed boots — MANDATORY
+  - Heat-resistant gloves — MANDATORY
+  - Face shield (during blowdown operations)
+  - FR coveralls — MANDATORY
+  - Hearing protection (near burner)
+
+AREA: Robotic Welding Cell
+Required PPE:
+  - Safety glasses — MANDATORY
+  - Steel-toed boots — MANDATORY
+  - Welding shield (auto-darkening, Shade 10+) during arc welding
+  - FR gloves
+  - Hi-Vis vest (outside cell fencing)
+PROHIBITED:
+  - No entry to cell during AUTO operation
+
+=========================================================
+3. LOCKOUT / TAGOUT (LOTO) PROCEDURE
+=========================================================
+LOTO must be applied before any maintenance, cleaning, or adjustment
+on machinery. FAILURE TO FOLLOW LOTO IS A DISMISSIBLE OFFENCE.
+
+STEP-BY-STEP LOTO PROCEDURE:
+---------------------------------
+Step 1: NOTIFY — Inform affected personnel and supervisor that machine is being locked out.
+Step 2: IDENTIFY — Identify ALL energy sources (electrical, hydraulic, pneumatic, stored).
+Step 3: SHUTDOWN — Turn off machine using normal stopping procedure.
+Step 4: ISOLATE — Turn off and isolate each energy source:
+         - Electrical: Turn isolator to OFF position.
+         - Hydraulic: Close hydraulic supply valve, depressurize.
+         - Pneumatic: Turn off air supply, exhaust residual pressure.
+         - Stored energy: Lower suspended loads, release compressed springs.
+Step 5: LOCK — Apply personal padlock to each isolation point.
+         Rule: ONE LOCK PER PERSON working on the machine.
+Step 6: TAG — Attach RED "DANGER — DO NOT OPERATE" tag to each lock.
+Step 7: VERIFY — Test that machine CANNOT start:
+         - Electrical: Check with multimeter — verify zero voltage.
+         - Hydraulic: Verify gauge reads zero pressure.
+         - Pneumatic: Open test valve — verify no airflow.
+Step 8: WORK — Proceed with maintenance task.
+Step 9: RESTORE — Remove all tools and personnel from machine.
+Step 10: REMOVE LOCK — Each person removes their OWN lock only.
+Step 11: NOTIFY — Inform operators and supervisor that machine is restored.
+
+CRITICAL LOTO RULES:
+  - NEVER remove someone else's lock.
+  - NEVER work on a machine without your own lock applied.
+  - If lock key is lost: call supervisor — special removal procedure applies.
+  - ALL energy sources must be isolated — not just electrical.
+
+=========================================================
+4. HAZARD IDENTIFICATION & RISK MATRIX
+=========================================================
+
+RISK LEVEL    | PROBABILITY x SEVERITY | ACTION REQUIRED
+--------------|------------------------|------------------------------------------
+EXTREME       | High x High           | Stop work immediately. Escalate to HSE.
+HIGH          | High x Medium         | Correct before restarting. Notify supervisor.
+MEDIUM        | Low x High            | Schedule correction within current shift.
+LOW           | Low x Low             | Monitor. Log in hazard register.
+
+=========================================================
+5. CHEMICAL HAZARDS IN PLANT
+=========================================================
+Chemical                  | Location          | Hazard          | PPE Required
+--------------------------|-------------------|-----------------|---------------------------
+Coolant Concentrate       | Machining Cell    | Skin irritant   | Nitrile gloves, glasses
+Hydraulic Oil ISO VG 46   | Hydraulic Cell    | Slip hazard     | Oil gloves, boots
+Anti-Scale Chemical       | Boiler Room       | Corrosive       | Gloves, face shield, apron
+Oxygen Scavenger          | Boiler Room       | Irritant        | Gloves, glasses
+Gear Oil ISO VG 220       | Conveyor Area     | Slip hazard     | Oil gloves
+Welding Fumes             | Robotic Cell      | Respiratory     | RPE if ventilation fails
+Cutting Fluids            | Machining Cell    | Skin sensitizer | Nitrile gloves
+
+All chemicals must have SDS (Safety Data Sheets) available at point of use.
+
+=========================================================
+6. FIRE SAFETY
+=========================================================
+Fire Extinguisher Types:
+  - CO2 (Black): Electrical fires, hydraulic fluid fires — DO NOT use on boiler
+  - Dry Powder (Blue): General, flammable liquid
+  - Water (Red): Paper, wood only — NEVER on electrical or flammable liquid
+
+Fire Evacuation Procedure:
+  1. Raise alarm — press nearest break-glass unit.
+  2. Shut down machines using E-STOP if safe to do so.
+  3. Evacuate via nearest marked EXIT — do not use elevators.
+  4. Assemble at MUSTER POINT (Car Park A, West Gate).
+  5. Report to Area Warden — confirm headcount.
+  6. Do NOT re-enter building until ALL CLEAR from Fire Marshal.
+
+=========================================================
+7. EMERGENCY CONTACTS
+=========================================================
+Plant Emergency:          Ext. 999 (24/7)
+HSE Officer:              Ext. 101
+Maintenance Supervisor:   Ext. 201
+Shift Supervisor:         Ext. 301
+Medical First Aid:        Ext. 401
+External Emergency:       112 / 101 (Fire) / 108 (Ambulance)
+
+=========================================================
+8. INCIDENT REPORTING PROCEDURE
+=========================================================
+ALL of the following must be reported immediately:
+  - Any injury (however minor)
+  - Near misses
+  - Equipment damage
+  - Dangerous conditions
+  - Environmental incidents (spills reaching drains)
+
+Reporting Steps:
+  1. Ensure area is safe — provide first aid if needed.
+  2. Notify shift supervisor immediately.
+  3. Complete INCIDENT REPORT FORM (Form HSE-IR-001).
+  4. Do not disturb scene until investigation is complete.
+  5. Serious injuries: notify HSE department within 1 hour.
+
+=========================================================
+9. PERMIT TO WORK SYSTEM
+=========================================================
+The following work ALWAYS requires a Permit to Work (PTW):
+  - Hot work (welding, grinding near flammables)
+  - Confined space entry
+  - Work at height (> 1.8 meters)
+  - Electrical work on live systems
+  - Hydraulic system work under pressure
+  - Boiler internal inspection
+
+PTW forms must be approved by the Area Supervisor and HSE before work begins.
+
+=========================================================
+10. SAFETY SIGN MEANINGS
+=========================================================
+RED CIRCLE (Prohibition): Action is FORBIDDEN.
+  Example: No smoking. No entry.
+
+YELLOW TRIANGLE (Warning): Hazard nearby — take care.
+  Example: Forklift area. High voltage. Hot surface.
+
+BLUE CIRCLE (Mandatory): Action MUST be done.
+  Example: Wear safety glasses. Wear gloves.
+
+GREEN SQUARE (Safe Condition): Safety information.
+  Example: First aid. Emergency exit. Assembly point.

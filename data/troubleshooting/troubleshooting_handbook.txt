@@ -1,0 +1,694 @@
+TROUBLESHOOTING HANDBOOK
+Document No: TBK-001
+Version: 1.5
+Department: Maintenance Engineering
+Covers: CNC-M01, HYD-P02, CVB-003, BLR-004, ROB-005
+
+=========================================================
+HOW TO USE THIS HANDBOOK
+=========================================================
+1. Identify the machine ID and error code from the HMI/display.
+2. Locate the error code in the relevant machine section below.
+3. Follow troubleshooting steps IN ORDER — do not skip steps.
+4. If issue persists after all steps, escalate to Maintenance Supervisor.
+5. Log all actions taken in the machine logbook.
+
+Severity Legend:
+  [LOW]    = Monitor and plan correction. No immediate production impact.
+  [MEDIUM] = Schedule correction within current shift. Reduce load.
+  [HIGH]   = Stop machine. Fix before restarting.
+  [CRITICAL] = Emergency stop. Evacuate if needed. Call supervisor.
+
+=========================================================
+SECTION 1: CNC MILLING MACHINE (CNC-M01)
+=========================================================
+
+--- ERROR E01: SPINDLE OVERLOAD ---
+Severity: [HIGH]
+Description: Spindle motor current exceeds rated limit. Machine auto-stops.
+Possible Causes:
+  - Dull or broken cutting tool
+  - Incorrect feed rate or depth of cut
+  - Hard material spot in workpiece
+  - Spindle bearing wear
+Troubleshooting Steps:
+  1. Press E-STOP and wait for spindle to fully stop.
+  2. Open machine door and inspect cutting tool — look for breakage or wear.
+  3. If tool is worn: replace with new tool from tool crib, update tool offset.
+  4. Review G-code — verify feed rate and depth of cut match job card.
+  5. Reduce feed rate by 20% and retry.
+  6. If overload repeats: check spindle motor current at drive panel.
+  7. If current > 120% of rated: call maintenance to inspect spindle bearings.
+  8. Log incident: tool life consumed, material, cutting parameters.
+Spare Parts: SP-CNC-T01 (End Mill Set), SP-CNC-B01 (Spindle Bearing Kit)
+
+--- ERROR E02: AXIS DRIVE FAULT ---
+Severity: [HIGH]
+Description: Servo drive alarm on X, Y, or Z axis. Position error exceeded.
+Possible Causes:
+  - Axis collision with workpiece or fixture
+  - Servo drive overheating
+  - Encoder cable damage
+  - Linear guideway stiction
+Troubleshooting Steps:
+  1. Record which axis triggered the fault (shown on display).
+  2. Manually jog the axis slightly to check for mechanical obstruction.
+  3. Check servo drive status LEDs in the electrical cabinet.
+  4. Press FAULT RESET on drive panel.
+  5. Home the machine (all axes).
+  6. Run axis at slow jog speed — listen for unusual noise.
+  7. If fault recurs: check encoder cable connections at motor and drive.
+  8. If drive LED shows overheat: check cabinet cooling fan.
+  9. Escalate if fault persists after 2 resets.
+Spare Parts: SP-CNC-E01 (Encoder Cable), SP-CNC-D01 (Servo Drive Unit)
+
+--- ERROR E03: COOLANT LOW ---
+Severity: [MEDIUM]
+Description: Coolant reservoir level below minimum threshold.
+Possible Causes:
+  - Normal consumption over long run
+  - Coolant leak in tank, pipes, or nozzle
+  - Coolant pump failure causing splash waste
+Troubleshooting Steps:
+  1. Check reservoir sight glass level.
+  2. Inspect tank, piping, and nozzle connections for visible leaks.
+  3. If no leak: refill with approved coolant mix (10% concentration in water).
+  4. Check coolant pump pressure (should be 3–5 bar at nozzle).
+  5. Clean coolant filter strainer if flow is reduced.
+  6. If coolant appears discolored or smells bad: drain and replace fully.
+  7. Monitor for 30 minutes after refill to ensure level is stable.
+Spare Parts: SP-CNC-C01 (Coolant Concentrate 20L), SP-CNC-F01 (Coolant Filter)
+
+--- ERROR E04: DOOR INTERLOCK OPEN ---
+Severity: [LOW]
+Description: Machine door safety interlock is open or not detected.
+Possible Causes:
+  - Door not fully closed
+  - Door interlock switch damaged or misaligned
+  - Interlock wiring fault
+Troubleshooting Steps:
+  1. Close machine door firmly — ensure latch clicks.
+  2. Check if error clears. If yes: remind operators to close door fully.
+  3. Inspect door interlock switch — check for physical damage.
+  4. Use multimeter to verify switch continuity when door is closed.
+  5. Check wiring connector at switch — may be loose.
+  6. If switch is faulty: tag out machine and replace switch.
+Spare Parts: SP-CNC-I01 (Door Interlock Switch)
+
+--- ERROR E05: TOOL LENGTH ERROR ---
+Severity: [MEDIUM]
+Description: Tool length offset mismatch — actual vs programmed offset > tolerance.
+Possible Causes:
+  - Wrong tool loaded in spindle
+  - Tool offset not updated after tool change
+  - Tool pulled out of holder
+Troubleshooting Steps:
+  1. Stop machine. Do not continue cutting.
+  2. Verify tool number in spindle matches program's T-number.
+  3. Use tool length probe to re-measure tool.
+  4. Update tool offset in controller offset table.
+  5. Run dry cycle at slow speed to verify clearances before cutting.
+  6. Check tool holder collet for wear — tool should not slide out.
+Spare Parts: SP-CNC-H01 (Tool Holder ER32), SP-CNC-T02 (Collet Set)
+
+--- ERROR E06: LUBRICATION FAULT ---
+Severity: [HIGH]
+Description: Automatic lubrication system failed to cycle.
+Possible Causes:
+  - Lube oil tank empty
+  - Lube pump failure
+  - Blocked lube line
+Troubleshooting Steps:
+  1. Check lube oil tank level — refill if below MIN.
+  2. Press manual lube button — verify pump activates.
+  3. Inspect lube distribution block for blockages.
+  4. Check each axis lube point for oil seepage (visual check).
+  5. If pump fails to activate: check pump motor fuse in panel.
+  6. Do NOT run machine without lubrication — guideway damage will result.
+Spare Parts: SP-CNC-L01 (Lube Oil 1L), SP-CNC-P01 (Lube Pump Unit)
+
+--- ERROR E07: PROGRAM SYNTAX ERROR ---
+Severity: [LOW]
+Description: G-code program contains syntax error. Machine stops at error line.
+Possible Causes:
+  - Manual editing error in G-code
+  - Corrupted program file during transfer
+  - Unsupported G/M code for this controller
+Troubleshooting Steps:
+  1. Note error line number on display.
+  2. Open program in editor — navigate to error line.
+  3. Check for missing semicolons, incorrect axis letters, or invalid values.
+  4. Correct the syntax and save.
+  5. Run program check (DNC simulation mode) before running on machine.
+  6. If program came from CAM software: regenerate from CAM and re-post.
+
+--- ERROR E08: SPINDLE BEARING OVERHEAT ---
+Severity: [CRITICAL]
+Description: Spindle temperature sensor > 80°C. Thermal runaway risk.
+Possible Causes:
+  - Spindle bearing failure
+  - Insufficient spindle lubrication
+  - Excessive cutting load over extended time
+Troubleshooting Steps:
+  1. STOP machine immediately. Press E-STOP.
+  2. Do NOT restart until spindle temperature drops below 50°C.
+  3. Check spindle oil/grease level.
+  4. Listen for roughness when spinning spindle by hand (power off).
+  5. Call maintenance engineer — bearing inspection required.
+  6. If grinding noise: replace spindle bearings before next use.
+  7. Log downtime and temperature peak value.
+Spare Parts: SP-CNC-B01 (Spindle Bearing Kit), SP-CNC-G01 (Spindle Grease)
+
+--- ERROR E09: FEED RATE OVERRIDE MISMATCH ---
+Severity: [LOW]
+Description: Feed rate override potentiometer set below 50% — potential quality issue.
+Troubleshooting Steps:
+  1. Check feed rate override dial on operator panel.
+  2. Set to 100% for normal production.
+  3. Verify actual feed rate matches programmed rate on display.
+  4. If operator deliberately reduced rate: document reason in logbook.
+
+--- ERROR E10: MEMORY FULL ---
+Severity: [LOW]
+Description: CNC controller program memory is full. Cannot load new programs.
+Troubleshooting Steps:
+  1. Access program list in controller memory.
+  2. Delete obsolete or duplicate programs (after backing up to USB or DNC server).
+  3. Transfer important programs to DNC server for storage.
+  4. Reload required programs after clearing space.
+
+=========================================================
+SECTION 2: HYDRAULIC PUMP UNIT (HYD-P02)
+=========================================================
+
+--- ERROR E11: OVERPRESSURE ---
+Severity: [CRITICAL]
+Description: System pressure exceeded set limit (> 280 bar). Safety valve may have lifted.
+Possible Causes:
+  - Pressure relief valve stuck closed or set too high
+  - Blocked actuator or cylinder at end of stroke
+  - Faulty pressure transducer
+Troubleshooting Steps:
+  1. STOP pump immediately.
+  2. Manually open unloading valve to relieve pressure.
+  3. Verify pressure on secondary mechanical gauge (confirm transducer reading).
+  4. Inspect pressure relief valve — manually test lift.
+  5. If PRV stuck closed: replace PRV before restart.
+  6. Check all cylinders — ensure none are mechanically locked at end of stroke.
+  7. Recalibrate pressure transducer if reading was false.
+Spare Parts: SP-HYD-R01 (Pressure Relief Valve), SP-HYD-T01 (Pressure Transducer)
+
+--- ERROR E12: LOW FLUID LEVEL ---
+Severity: [HIGH]
+Description: Hydraulic fluid reservoir below minimum level.
+Possible Causes:
+  - Fluid leak in hose, fitting, or cylinder seal
+  - Normal seepage over extended operation
+Troubleshooting Steps:
+  1. STOP pump — running low can cavitate pump.
+  2. Check sight glass level.
+  3. Inspect all hoses, fittings, and cylinders for external leaks.
+  4. Check beneath machine and drip tray for pooled fluid.
+  5. If leak found: do not restart until repaired.
+  6. If no leak: top up with ISO VG 46 hydraulic oil to MAX line.
+  7. Record amount added in maintenance log.
+Spare Parts: SP-HYD-O01 (Hydraulic Oil ISO VG46 20L), SP-HYD-S01 (Cylinder Seal Kit)
+
+--- ERROR E13: HIGH FLUID TEMPERATURE ---
+Severity: [HIGH]
+Description: Hydraulic fluid temperature > 75°C. Fluid degradation and seal failure risk.
+Possible Causes:
+  - Oil cooler fouled or bypassed
+  - Continuous operation under high load
+  - Low fluid level causing circulation overload
+  - Ambient temperature extremely high
+Troubleshooting Steps:
+  1. Reduce system load immediately.
+  2. Check oil cooler for fouling — clean cooler fins if blocked.
+  3. Check cooling water flow (if water-cooled cooler) — open inlet valve.
+  4. Verify fluid level — low level worsens heating.
+  5. Check thermostat bypass valve — should open at 50°C.
+  6. Allow fluid to cool below 55°C before resuming full load.
+  7. If temperature rises rapidly under no load: suspect cooler bypass stuck open.
+Spare Parts: SP-HYD-C01 (Oil Cooler), SP-HYD-V01 (Thermostat Valve)
+
+--- ERROR E14: FILTER BLOCKED ---
+Severity: [MEDIUM]
+Description: Hydraulic return filter differential pressure > 3.5 bar.
+Troubleshooting Steps:
+  1. Do not ignore — running with blocked filter bypasses filtration.
+  2. Stop pump when convenient (end of cycle).
+  3. Change hydraulic filter element.
+  4. Note interval since last filter change — adjust PM schedule if too short.
+  5. Inspect used filter element for metal particles (sign of pump wear).
+  6. If metal particles present: investigate pump condition.
+Spare Parts: SP-HYD-F01 (Filter Element 10 Micron)
+
+--- ERROR E15: MOTOR OVERLOAD ---
+Severity: [HIGH]
+Description: Hydraulic pump motor thermal overload tripped.
+Possible Causes:
+  - System operating above pressure rating
+  - Motor windings degraded
+  - Low voltage supply
+  - Mechanical jam in pump
+Troubleshooting Steps:
+  1. Allow motor to cool for 10 minutes.
+  2. Check power supply voltage — should be within ±5% of rated.
+  3. Reduce system pressure setpoint by 10%.
+  4. Reset overload relay in motor control panel.
+  5. Restart at reduced pressure — if overload trips again within 5 min: stop.
+  6. Megger test motor windings — if < 1 MΩ: motor rewinding required.
+Spare Parts: SP-HYD-M01 (Motor Overload Relay), SP-HYD-P01 (Pump Coupling)
+
+--- ERROR E16: PUMP CAVITATION ---
+Severity: [HIGH]
+Description: Knocking/rattling sound from pump. Inlet starvation suspected.
+Possible Causes:
+  - Suction line partially blocked or kinked
+  - Fluid viscosity too high (cold start)
+  - Suction filter blocked
+  - Low fluid level in reservoir
+Troubleshooting Steps:
+  1. Check fluid temperature — cold fluid is viscous. Allow warm-up.
+  2. Inspect suction strainer — clean if blocked.
+  3. Check suction line for kinks, collapsed hose, or closed valve.
+  4. Verify reservoir fluid level is adequate.
+  5. If noise persists: stop pump — cavitation causes rapid pump failure.
+Spare Parts: SP-HYD-SS01 (Suction Strainer)
+
+--- ERROR E17: SOLENOID VALVE FAULT ---
+Severity: [MEDIUM]
+Description: Directional control solenoid valve not responding to signal.
+Troubleshooting Steps:
+  1. Check PLC output signal to solenoid using indicator lamp or multimeter.
+  2. Verify 24V DC at solenoid coil terminals.
+  3. Check solenoid coil resistance — open circuit = coil failure.
+  4. Inspect valve spool for contamination or sticking.
+  5. Flush valve or replace coil as needed.
+Spare Parts: SP-HYD-SV01 (Solenoid Coil 24VDC), SP-HYD-DV01 (Directional Valve)
+
+--- ERROR E18: CYLINDER LEAKAGE ---
+Severity: [MEDIUM]
+Description: Hydraulic cylinder passing fluid internally or externally.
+Troubleshooting Steps:
+  1. Observe if cylinder drifts when holding load (internal bypass).
+  2. Check piston rod seal for external weeping.
+  3. Clean rod thoroughly — inspect for scoring or corrosion.
+  4. If scored rod: hone or replace rod before fitting new seals.
+  5. Replace seal kit during next scheduled downtime.
+Spare Parts: SP-HYD-S01 (Cylinder Seal Kit)
+
+--- ERROR E19: PRESSURE TRANSDUCER FAULT ---
+Severity: [MEDIUM]
+Description: Pressure transducer reading is erratic or out of range.
+Troubleshooting Steps:
+  1. Compare transducer reading vs analog gauge.
+  2. Check wiring connections to transducer.
+  3. Replace transducer if reading deviates > 5% from gauge.
+Spare Parts: SP-HYD-T01 (Pressure Transducer 0-400 bar)
+
+--- ERROR E20: HOSE BURST WARNING ---
+Severity: [CRITICAL]
+Description: Sudden pressure drop detected — possible hose failure.
+Troubleshooting Steps:
+  1. STOP pump IMMEDIATELY.
+  2. EVACUATE area — high-pressure fluid injection is fatal.
+  3. Do NOT approach until system is fully depressurized.
+  4. Identify ruptured hose.
+  5. Replace with rated hose assembly. Do not use temporary repairs.
+  6. Report incident to safety officer.
+Spare Parts: SP-HYD-H01 (High Pressure Hose Assembly)
+
+=========================================================
+SECTION 3: CONVEYOR BELT SYSTEM (CVB-003)
+=========================================================
+
+--- ERROR E21: BELT SLIP ---
+Severity: [MEDIUM]
+Description: Belt slipping on drive pulley — speed sensor reading drops below setpoint.
+Troubleshooting Steps:
+  1. Reduce conveyor load — remove excess products.
+  2. Increase belt tension using tail pulley adjustment bolts.
+  3. Inspect drive pulley lagging for wear — replace if smooth.
+  4. Check belt surface for oil or contamination — clean with degreaser.
+  5. Verify motor and gearbox output are correct.
+Spare Parts: SP-CVB-L01 (Drive Pulley Lagging Sheet), SP-CVB-B01 (Tensioning Spring Set)
+
+--- ERROR E22: MOTOR OVERLOAD ---
+Severity: [HIGH]
+Description: Conveyor drive motor thermal overload tripped.
+Troubleshooting Steps:
+  1. Stop conveyor — remove all product load from belt.
+  2. Cool motor for 15 minutes.
+  3. Check for mechanical jam in belt or rollers.
+  4. Spin drive pulley by hand — should rotate freely.
+  5. Reset overload relay — restart unloaded and observe current draw.
+  6. If overload trips unloaded: inspect motor windings.
+Spare Parts: SP-CVB-M01 (Motor Overload Relay 25A)
+
+--- ERROR E23: BELT MISALIGNMENT ---
+Severity: [MEDIUM]
+Description: Belt tracking off-center by more than 30mm. Risk of belt damage.
+Troubleshooting Steps:
+  1. Observe which side belt drifts toward.
+  2. Stop conveyor safely.
+  3. Adjust tail pulley tracking bolts (see SOP-CVB-003 Section 6).
+  4. Restart and observe tracking for 2 minutes.
+  5. Check for uneven belt loading (product placed off-center).
+  6. Inspect belt edge for fraying (sign of long-term misalignment).
+  7. Check frame squareness if adjustment doesn't resolve.
+Spare Parts: SP-CVB-B02 (Belt Tracking Guide Set)
+
+--- ERROR E24: ROLLER JAM ---
+Severity: [HIGH]
+Description: Return or carry roller seized — flat spot developing on belt.
+Troubleshooting Steps:
+  1. STOP conveyor immediately.
+  2. Lock out main control panel.
+  3. Locate jammed roller — rotate by hand to identify.
+  4. Remove jammed roller — clear any debris (wire, packaging straps).
+  5. Replace roller if bearing is seized.
+  6. Inspect belt underside for damage at jam location.
+Spare Parts: SP-CVB-R01 (Carry Roller 89mm), SP-CVB-RR01 (Return Roller 89mm)
+
+--- ERROR E25: DRIVE GEARBOX FAULT ---
+Severity: [HIGH]
+Description: Gearbox overheating or abnormal noise.
+Troubleshooting Steps:
+  1. Stop conveyor.
+  2. Check gearbox oil level via dipstick.
+  3. Listen for grinding or whining — bearing or gear wear.
+  4. Allow to cool — check oil for metallic particles.
+  5. If oil is contaminated with metal: replace gearbox.
+  6. Top up oil if low: ISO VG 220 gear oil.
+Spare Parts: SP-CVB-G01 (Gearbox Oil ISO VG220 5L), SP-CVB-GBX01 (Gearbox Assembly)
+
+--- ERROR E26: SPEED SENSOR FAULT ---
+Severity: [MEDIUM]
+Description: Belt speed sensor not reading or erratic.
+Troubleshooting Steps:
+  1. Check sensor mounting — may have come loose.
+  2. Clean sensor face — proximity sensors fail when coated.
+  3. Verify sensor gap to target (typically 2–5mm).
+  4. Check wiring connector.
+  5. Replace sensor if fault persists.
+Spare Parts: SP-CVB-SS01 (Proximity Speed Sensor)
+
+--- ERROR E27: PULL CORD ACTIVATED ---
+Severity: [HIGH]
+Description: Emergency pull cord was activated. Belt has stopped.
+Troubleshooting Steps:
+  1. Identify which section of conveyor triggered pull cord.
+  2. Investigate — speak to operators in that area.
+  3. Check for fallen operator, trapped hand, or obstructed product.
+  4. Reset pull cord by twisting and pulling.
+  5. Clear cause before restarting.
+  6. Report all pull cord activations to supervisor — mandatory log entry.
+
+--- ERROR E28: PHOTOCELL SENSOR FAULT ---
+Severity: [LOW]
+Description: Product detection photocell not functioning.
+Troubleshooting Steps:
+  1. Clean photocell lens — often caused by dust or product residue.
+  2. Check alignment — emitter and receiver must be aligned.
+  3. Verify 24V DC power to sensor.
+  4. Replace sensor if cleaning and alignment fail.
+Spare Parts: SP-CVB-PC01 (Through-Beam Photocell Pair)
+
+--- ERROR E29: BELT TEAR DETECTED ---
+Severity: [CRITICAL]
+Description: Belt tear/damage sensor triggered or belt physically torn.
+Troubleshooting Steps:
+  1. STOP immediately.
+  2. Lock out conveyor.
+  3. Walk entire belt length to locate damage.
+  4. Assess tear — small edge tears can be vulcanized. Large tears need belt replacement.
+  5. Do not run belt with any open tear — it will propagate rapidly.
+Spare Parts: SP-CVB-BLT01 (Replacement Belt Section), SP-CVB-VK01 (Vulcanizing Kit)
+
+--- ERROR E30: GEARBOX OIL LEAK ---
+Severity: [MEDIUM]
+Description: Gearbox oil seeping from shaft seal or gasket.
+Troubleshooting Steps:
+  1. Identify leak point — shaft seal, drain plug, or gasket.
+  2. Clean area and apply leak test dye if needed.
+  3. Replace shaft seal or gasket at next opportunity.
+  4. Monitor oil level daily until repaired.
+Spare Parts: SP-CVB-OS01 (Gearbox Shaft Seal Kit)
+
+=========================================================
+SECTION 4: INDUSTRIAL STEAM BOILER (BLR-004)
+=========================================================
+
+--- ERROR E31: LOW WATER LEVEL ---
+Severity: [CRITICAL]
+Description: Boiler water level below safe minimum. Boiler has auto-tripped.
+Possible Causes:
+  - Feedwater pump failure
+  - Feedwater control valve stuck closed
+  - Large steam demand surge
+  - Boiler tube leak
+Troubleshooting Steps:
+  1. DO NOT attempt to restart immediately.
+  2. Verify feedwater pump is running — check motor starter.
+  3. Manually open feedwater valve to restore level.
+  4. Wait until level reaches 50% before attempting relight.
+  5. Check for tube leaks — rising water with no feedwater = tube leak.
+  6. If tube leak suspected: SHUT DOWN boiler. Call boiler inspector.
+  7. Log trip in statutory register (mandatory).
+Spare Parts: SP-BLR-FP01 (Feedwater Pump Impeller), SP-BLR-FV01 (Feedwater Control Valve)
+
+--- ERROR E32: HIGH STEAM PRESSURE ---
+Severity: [CRITICAL]
+Description: Steam pressure exceeded trip setpoint (11 bar). Burner auto-tripped.
+Troubleshooting Steps:
+  1. Confirm safety valve has lifted (audible steam discharge).
+  2. Open steam supply to process — reduce boiler pressure.
+  3. Check demand control valve — may be stuck closed.
+  4. Once pressure drops to < 9 bar: relight burner.
+  5. Investigate root cause — uncontrolled pressure rise = serious fault.
+  6. Check combustion controller and pressure transmitter calibration.
+Spare Parts: SP-BLR-SV01 (Safety Valve), SP-BLR-PT01 (Pressure Transmitter)
+
+--- ERROR E33: FLAME FAILURE ---
+Severity: [HIGH]
+Description: Burner flame signal lost. Boiler auto-purged and locked out.
+Possible Causes:
+  - Gas supply interruption
+  - Igniter failure
+  - UV flame detector fouled
+  - Combustion air shortage
+Troubleshooting Steps:
+  1. Check gas supply pressure at regulator (min 80 mbar).
+  2. Purge boiler furnace (5 minutes on FD fan).
+  3. Clean UV flame detector cell.
+  4. Check igniter electrode gap (2.5–3mm) and condition.
+  5. Attempt relight — limited to 3 attempts.
+  6. If flame still fails after 3 attempts: call burner service engineer.
+Spare Parts: SP-BLR-IG01 (Igniter Electrode), SP-BLR-UV01 (UV Flame Detector)
+
+--- ERROR E34: FORCED DRAFT FAN FAULT ---
+Severity: [CRITICAL]
+Description: FD fan stopped or speed reduced. Burner cannot fire.
+Troubleshooting Steps:
+  1. STOP burner — never fire without combustion air.
+  2. Check FD fan motor starter — may have tripped.
+  3. Inspect fan impeller for blockage (debris, ice in winter).
+  4. Check fan belt tension (if belt-driven).
+  5. If motor fault: call electrical maintenance.
+Spare Parts: SP-BLR-FM01 (FD Fan Motor), SP-BLR-FB01 (Fan Belt Set)
+
+--- ERROR E35: HIGH FLUE GAS TEMPERATURE ---
+Severity: [MEDIUM]
+Description: Flue gas temperature > 260°C indicating heat transfer loss.
+Possible Causes:
+  - Scale (limescale) buildup on boiler tube surfaces
+  - Soot deposits on fire side
+  - Combustion air excess too high
+Troubleshooting Steps:
+  1. Increase chemical dosing (anti-scale) temporarily.
+  2. Reduce excess air ratio — adjust combustion.
+  3. Schedule boiler tube descaling (water side) at next planned shutdown.
+  4. Schedule soot blowing or manual brushing (fire side).
+  5. Monitor flue gas temp trend — if rising 5°C/week: urgent descaling needed.
+Spare Parts: SP-BLR-DS01 (Descaling Chemical 25L)
+
+--- ERROR E36: FEEDWATER PUMP FAILURE ---
+Severity: [HIGH]
+Description: Feedwater pump not delivering flow. Water level falling.
+Troubleshooting Steps:
+  1. Check motor is running — starter in control panel.
+  2. Check pump discharge pressure gauge.
+  3. Inspect pump inlet strainer — may be blocked.
+  4. Verify feedwater tank level is adequate.
+  5. Switch to standby feedwater pump (if available).
+  6. If no standby: reduce steam output to match available feedwater.
+Spare Parts: SP-BLR-FP01 (Feedwater Pump Impeller), SP-BLR-FS01 (Pump Strainer)
+
+--- ERROR E37: CHEMICAL DOSING LOW ---
+Severity: [MEDIUM]
+Description: Chemical dosing tank empty or pump failure. Water quality risk.
+Troubleshooting Steps:
+  1. Refill chemical dosing tank with correct chemical.
+  2. Check dosing pump is running and injecting.
+  3. Run manual dose to compensate for gap in dosing.
+  4. Test boiler water conductivity and pH after dosing.
+  5. Target pH: 10.5–11.5, conductivity: < 3500 µS/cm.
+Spare Parts: SP-BLR-CH01 (Anti-Scale Chemical 25L), SP-BLR-CH02 (Oxygen Scavenger 25L)
+
+--- ERROR E38: SAFETY VALVE PASSING ---
+Severity: [MEDIUM]
+Description: Safety valve weeping or continuously passing steam below set pressure.
+Troubleshooting Steps:
+  1. Safety valve seat may be damaged or fouled.
+  2. Manually lift valve briefly to clear debris from seat.
+  3. If still passing: schedule replacement.
+  4. Do NOT block, wire shut, or tamper with safety valve.
+  5. Report to boiler inspector — statutory requirement.
+Spare Parts: SP-BLR-SV01 (Safety Valve 11 bar)
+
+--- ERROR E39: COMBUSTION CONTROLLER FAULT ---
+Severity: [HIGH]
+Description: Burner management system (BMS) controller alarm active.
+Troubleshooting Steps:
+  1. Read fault code on BMS display.
+  2. Common causes: wiring fault, sensor out of range, program error.
+  3. Reset BMS after correcting identified fault.
+  4. Do not bypass or override BMS — it is a safety device.
+  5. If BMS requires replacement: call manufacturer service engineer.
+Spare Parts: SP-BLR-BMS01 (Burner Management System Unit)
+
+--- ERROR E40: BLOWDOWN VALVE STUCK ---
+Severity: [MEDIUM]
+Description: Bottom blowdown valve not closing fully. Continuous water loss.
+Troubleshooting Steps:
+  1. Check blowdown valve actuator — may need manual close.
+  2. If valve handle is stiff: do not force — may indicate deposits.
+  3. Perform chemical clean of blowdown line.
+  4. Replace valve at next outage.
+Spare Parts: SP-BLR-BV01 (Blowdown Valve)
+
+=========================================================
+SECTION 5: ROBOTIC ARM (ROB-005)
+=========================================================
+
+--- ERROR E41: JOINT OVERLOAD ---
+Severity: [HIGH]
+Description: Torque on one or more joints exceeded limit. Protective stop activated.
+Troubleshooting Steps:
+  1. Do NOT restart immediately.
+  2. Check if payload on end-effector is within rated limit (max 20 kg).
+  3. Inspect for collisions with fixtures or tooling.
+  4. Check program — verify no singularity in path.
+  5. Clear protective stop from teach pendant.
+  6. Run program at 25% speed to verify no overload recurs.
+Spare Parts: SP-ROB-J01 (Joint Seal Kit), SP-ROB-GR01 (Gearbox Unit J1)
+
+--- ERROR E42: MOTOR DRIVE FAULT ---
+Severity: [HIGH]
+Description: Servo drive alarm in one or more axes of robot controller.
+Troubleshooting Steps:
+  1. Open robot controller cabinet.
+  2. Read fault code on servo drive display.
+  3. Check for overtemperature — check cabinet cooling fan.
+  4. Check for overcurrent — may indicate motor fault.
+  5. Reset drive and attempt restart.
+  6. If fault recurs: call robot manufacturer service.
+Spare Parts: SP-ROB-SD01 (Servo Drive Unit), SP-ROB-CF01 (Controller Cabinet Fan)
+
+--- ERROR E43: SAFETY CIRCUIT OPEN ---
+Severity: [HIGH]
+Description: Safety circuit broken — robot will not run in AUTO mode.
+Possible Causes:
+  - Cell gate is open
+  - Light curtain beam broken
+  - Safety PLC fault
+  - Emergency stop latched
+Troubleshooting Steps:
+  1. Check all cell access gates are closed and latched.
+  2. Verify no person or object is breaking the light curtain.
+  3. Check E-STOP buttons — twist to release any latched stops.
+  4. Check safety relay status LEDs — identify broken channel.
+  5. Reset safety circuit from teach pendant.
+Spare Parts: SP-ROB-SR01 (Safety Relay Module), SP-ROB-LC01 (Light Curtain Replacement)
+
+--- ERROR E44: AIR PRESSURE LOW ---
+Severity: [MEDIUM]
+Description: Pneumatic supply to gripper below minimum (< 4 bar). Gripper may fail to hold.
+Troubleshooting Steps:
+  1. Check plant air supply pressure at regulator.
+  2. Inspect air lines for leaks (hissing sound).
+  3. Drain air filter/regulator — accumulated water reduces pressure.
+  4. Verify air regulator setpoint is 5–6 bar.
+  5. Check solenoid valves for leaks.
+Spare Parts: SP-ROB-AF01 (Air Filter/Regulator Unit), SP-ROB-SV01 (Pneumatic Solenoid Valve)
+
+--- ERROR E45: PROGRAM NOT FOUND ---
+Severity: [LOW]
+Description: Selected job program not found in robot controller memory.
+Troubleshooting Steps:
+  1. Check program name matches job card exactly (case-sensitive).
+  2. Browse program list on teach pendant.
+  3. Load program from USB or network backup.
+  4. If program was never created: call robot programmer.
+
+--- ERROR E46: TCP CALIBRATION ERROR ---
+Severity: [MEDIUM]
+Description: Tool Center Point (TCP) offset has drifted — quality risk.
+Troubleshooting Steps:
+  1. Run TCP calibration routine from controller menu.
+  2. Use calibration pin or reference point for calibration.
+  3. Record new TCP values in calibration log.
+  4. Verify first part quality after calibration.
+  5. Investigate cause — likely collision damaged end-effector.
+Spare Parts: SP-ROB-TCP01 (TCP Calibration Tool)
+
+--- ERROR E47: WRIST JOINT FAULT (J4/J5/J6) ---
+Severity: [HIGH]
+Description: Wrist joint motor or gearbox alarm.
+Troubleshooting Steps:
+  1. Record specific joint number from controller error log.
+  2. Check for physical obstruction in wrist movement.
+  3. Check gearbox oil level (wrist gearboxes have individual fill points).
+  4. Reset and test wrist motion at slow speed.
+  5. If fault repeats: wrist gearbox may need replacement.
+Spare Parts: SP-ROB-WG01 (Wrist Gearbox Unit), SP-ROB-WO01 (Wrist Gearbox Oil)
+
+--- ERROR E48: VISION SYSTEM ERROR ---
+Severity: [MEDIUM]
+Description: Robot vision system camera not detecting target or calibration lost.
+Troubleshooting Steps:
+  1. Clean camera lens — fingerprints or dust cause detection failures.
+  2. Check lighting — ambient light changes affect vision.
+  3. Run vision calibration routine from pendant.
+  4. Verify target object is correctly presented.
+  5. If camera fails: replace camera and recalibrate.
+Spare Parts: SP-ROB-VC01 (Vision Camera Unit), SP-ROB-VL01 (Vision Lighting Ring)
+
+--- ERROR E49: ROBOT SINGULARITY WARNING ---
+Severity: [MEDIUM]
+Description: Robot path passes through or near a singularity — unpredictable motion risk.
+Troubleshooting Steps:
+  1. Stop robot.
+  2. Modify path in teach pendant to avoid singularity position.
+  3. Common singularity: J5 near 0° (wrist straight). Add 5–10° offset.
+  4. Regenerate path from CAD/CAM if needed.
+  5. Test modified path at 10% speed.
+
+--- ERROR E50: BATTERY LOW (CONTROLLER BACKUP) ---
+Severity: [LOW]
+Description: Controller memory backup battery voltage low. Program loss risk.
+Troubleshooting Steps:
+  1. Back up all programs to USB immediately.
+  2. Schedule battery replacement within 2 weeks.
+  3. Do not wait until battery completely fails — program memory will be lost.
+Spare Parts: SP-ROB-BAT01 (Controller Backup Battery)
+
+=========================================================
+END OF TROUBLESHOOTING HANDBOOK
+=========================================================
+Escalation Contact: Maintenance Supervisor — Ext. 201
+Emergency: Plant Safety Officer — Ext. 999
+Document Owner: Maintenance Engineering Manager
+Next Review Date: 2025-01-15

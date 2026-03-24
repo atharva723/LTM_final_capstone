@@ -1,0 +1,36 @@
+part_id,name,machine_id,category,unit_price,stock_qty,reorder_level,supplier,lead_time_days
+SP-CNC-T01,"End Mill Set (10mm, HSS-Co)",CNC-M01,Cutting Tools,3500,20,5,Sandvik India,3
+SP-CNC-B01,Spindle Bearing Kit (Angular Contact),CNC-M01,Bearings,18500,2,1,SKF India,7
+SP-CNC-E01,"Encoder Cable (5m, Shielded)",CNC-M01,Electrical,2800,5,2,Heidenhain India,5
+SP-CNC-D01,Servo Drive Unit (2kW),CNC-M01,Drives,45000,1,1,Fanuc India,14
+SP-CNC-C01,Coolant Concentrate 20L,CNC-M01,Consumables,1200,10,3,Blaser Swisslube,2
+SP-CNC-F01,Coolant Filter Cartridge,CNC-M01,Filters,450,15,5,Local Supplier,1
+SP-CNC-I01,Door Interlock Switch,CNC-M01,Safety,1800,4,2,Schmersal India,5
+SP-CNC-H01,Tool Holder ER32 (BT40),CNC-M01,Tooling,2200,12,4,Rego-Fix India,3
+SP-CNC-L01,Spindle Lube Oil 1L,CNC-M01,Lubricants,380,20,6,Castrol India,1
+SP-CNC-P01,Automatic Lube Pump Unit,CNC-M01,Lubrication,12000,1,1,Bijur Delimon,10
+SP-HYD-R01,Pressure Relief Valve (280 bar),HYD-P02,Valves,8500,2,1,Bosch Rexroth India,7
+SP-HYD-T01,Pressure Transducer 0-400 bar,HYD-P02,Sensors,6500,3,1,Wika India,5
+SP-HYD-O01,Hydraulic Oil ISO VG46 20L,HYD-P02,Lubricants,2800,8,3,Shell India,1
+SP-HYD-S01,Cylinder Seal Kit (80mm bore),HYD-P02,Seals,1800,6,2,Parker Hannifin India,4
+SP-HYD-F01,Return Filter Element 10 Micron,HYD-P02,Filters,950,10,3,Hydac India,2
+SP-HYD-SV01,Solenoid Coil 24VDC,HYD-P02,Electrical,1200,8,3,Bosch Rexroth India,3
+SP-HYD-H01,"High Pressure Hose Assembly (DN12, 300 bar)",HYD-P02,Hoses,3500,4,2,Parker Hannifin India,3
+SP-HYD-SS01,Suction Strainer (100 mesh),HYD-P02,Filters,550,5,2,Local Supplier,1
+SP-CVB-R01,Carry Roller 89mm x 500mm,CVB-003,Rollers,650,20,8,Rulmeca India,3
+SP-CVB-GBX01,Helical Gearbox Assembly (7.5kW),CVB-003,Gearbox,38000,1,0,Elecon Engineering,21
+SP-CVB-BLT01,Conveyor Belt EP200 (per meter),CVB-003,Belt,1200,30,10,Fenner India,5
+SP-CVB-SS01,"Proximity Speed Sensor (NPN, 12-24V)",CVB-003,Sensors,1500,5,2,Pepperl+Fuchs India,3
+SP-BLR-SV01,Safety Valve 11 bar (Certified),BLR-004,Safety Valves,18500,2,1,Spirax Sarco India,10
+SP-BLR-PT01,Steam Pressure Transmitter 0-16 bar,BLR-004,Instrumentation,9500,2,1,Endress+Hauser India,7
+SP-BLR-IG01,Burner Igniter Electrode Set,BLR-004,Burner Parts,1200,6,3,Weishaupt India,5
+SP-BLR-UV01,UV Flame Detector Cell,BLR-004,Instruments,7500,2,1,Honeywell India,7
+SP-BLR-FP01,Feedwater Pump Impeller,BLR-004,Pump Parts,8500,2,1,Grundfos India,7
+SP-BLR-CH01,Anti-Scale Chemical 25L,BLR-004,Chemicals,3200,5,2,Nalco India,3
+SP-BLR-BMS01,Burner Management System Controller,BLR-004,Control Systems,55000,1,0,Siemens India,21
+SP-ROB-SR01,Safety Relay Module (Dual Channel),ROB-005,Safety,12000,2,1,Pilz India,7
+SP-ROB-AF01,Air Filter/Regulator Unit,ROB-005,Pneumatics,2800,3,1,SMC India,3
+SP-ROB-SV01,Pneumatic Solenoid Valve 5/2 Way,ROB-005,Pneumatics,3500,4,2,SMC India,3
+SP-ROB-BAT01,Controller Backup Battery (Lithium),ROB-005,Electrical,2200,5,2,Fanuc India,7
+SP-ROB-SD01,Robot Servo Drive Unit (Axis Module),ROB-005,Drives,85000,1,0,Fanuc India,21
+SP-ROB-VC01,"Vision Camera Unit (2MP, GigE)",ROB-005,Vision,28000,1,0,Cognex India,14

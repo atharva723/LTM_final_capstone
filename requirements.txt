@@ -1,0 +1,6 @@
+﻿langchain
+langchain-ollama
+faiss-cpu
+fastapi
+uvicorn
+streamlit

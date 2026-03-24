@@ -1,0 +1,292 @@
+PREVENTIVE MAINTENANCE SCHEDULE
+Document No: PM-SCH-001
+Version: 1.3
+Department: Maintenance Engineering
+Machines Covered: CNC-M01, HYD-P02, CVB-003, BLR-004, ROB-005
+
+=========================================================
+MAINTENANCE LEVELS EXPLAINED
+=========================================================
+Level A (Daily/Weekly)    — Operator performs. Basic checks, cleaning, lubrication.
+Level B (Monthly)         — Maintenance technician. Detailed inspection, adjustments.
+Level C (Quarterly)       — Senior technician. Component replacement, calibration.
+Level D (Annual/Overhaul) — Specialist. Full overhaul, statutory inspections.
+
+=========================================================
+MACHINE 1: CNC MILLING MACHINE (CNC-M01)
+=========================================================
+
+LEVEL A — DAILY (Operator)
+---------------------------
+[ ] Clean machine bed and chip tray
+[ ] Check coolant level — top up if < MIN
+[ ] Check spindle oil sight glass level
+[ ] Wipe guideways — apply light oil film
+[ ] Inspect tooling — check for wear or damage
+[ ] Verify door interlock and E-STOP function
+[ ] Clean coolant nozzles — check for blockage
+[ ] Log machine hours in logbook
+
+LEVEL A — WEEKLY (Operator)
+----------------------------
+[ ] Check lubrication oil tank level — top up
+[ ] Clean coolant filter strainer
+[ ] Inspect axis bellows for damage
+[ ] Check tool holders for corrosion or damage
+[ ] Clean control panel — check all buttons function
+
+LEVEL B — MONTHLY (Maintenance Technician)
+------------------------------------------
+[ ] Check axis backlash — measure with dial gauge
+[ ] Inspect servo motor cables and connectors
+[ ] Clean electrical cabinet interior
+[ ] Check coolant concentration — adjust to 8–10%
+[ ] Lubricate all grease nipples per lubrication chart
+[ ] Check spindle runout — max 0.005mm
+[ ] Inspect coolant pump — check impeller condition
+[ ] Verify axis limit switch function
+[ ] Check fan filters on electrical cabinet
+[ ] Review alarm history log — address recurring alarms
+
+LEVEL C — QUARTERLY (Senior Technician)
+----------------------------------------
+[ ] Replace coolant filter cartridge
+[ ] Check and adjust axis ballscrew preload
+[ ] Spindle warm-up test — run to 5000 RPM, check temp
+[ ] Check and clean heat exchanger
+[ ] Replace automatic lubrication oil
+[ ] Calibrate tool length probe
+[ ] Check drive belt tension (if applicable)
+[ ] Verify machine geometry — squareness check
+[ ] Inspect all hoses for cracking or swelling
+[ ] Thermographic inspection of electrical cabinet
+
+LEVEL D — ANNUAL OVERHAUL (Specialist)
+----------------------------------------
+[ ] Full spindle bearing replacement
+[ ] Replace all axis linear guideway pads
+[ ] Replace lubrication pump if > 4 years old
+[ ] Full coolant system flush and fresh fill
+[ ] Ballscrew nut replacement (if backlash > 0.02mm)
+[ ] Electrical wiring inspection — megger test
+[ ] Geometry recalibration — laser alignment
+[ ] Safety circuit function test — all interlocks
+
+=========================================================
+MACHINE 2: HYDRAULIC PUMP UNIT (HYD-P02)
+=========================================================
+
+LEVEL A — DAILY (Operator)
+---------------------------
+[ ] Check hydraulic fluid level — sight glass
+[ ] Inspect all hoses and fittings for leaks
+[ ] Check system pressure at operating gauge
+[ ] Listen for unusual pump noise (knocking/whining)
+[ ] Check motor temperature by touch
+[ ] Verify filter indicator (replace if RED)
+[ ] Log operating hours
+
+LEVEL A — WEEKLY (Operator)
+----------------------------
+[ ] Drain filter bowl — remove water accumulation
+[ ] Check all actuator seals for external leaks
+[ ] Wipe down pump unit and motor exterior
+
+LEVEL B — MONTHLY (Maintenance Technician)
+------------------------------------------
+[ ] Sample hydraulic fluid — send for lab analysis
+[ ] Check motor coupling for wear
+[ ] Inspect suction strainer — clean if blocked
+[ ] Verify PRV setting — test with calibrated gauge
+[ ] Check all solenoid valve function
+[ ] Inspect cylinder rod surfaces — check for scoring
+[ ] Verify actuator stroke speeds — compare to baseline
+
+LEVEL C — QUARTERLY (Senior Technician)
+----------------------------------------
+[ ] Replace hydraulic return filter element
+[ ] Check pump flow rate — compare to nameplate
+[ ] Inspect pump shaft seal
+[ ] Clean oil cooler externally
+[ ] Check all hose assemblies — replace any with age > 4 years
+[ ] Thermographic scan of motor and pump
+[ ] Flush and refill if fluid lab report is poor
+
+LEVEL D — ANNUAL OVERHAUL (Specialist)
+----------------------------------------
+[ ] Full hydraulic fluid drain and replacement
+[ ] Pump overhaul or replacement if efficiency < 80%
+[ ] Full seal replacement on all cylinders
+[ ] Replace all hoses regardless of condition
+[ ] Clean oil cooler internally
+[ ] PRV recalibration and certification
+[ ] Motor insulation test
+
+=========================================================
+MACHINE 3: CONVEYOR BELT SYSTEM (CVB-003)
+=========================================================
+
+LEVEL A — DAILY (Operator)
+---------------------------
+[ ] Walk full conveyor length — check for belt damage
+[ ] Verify belt tracking — centered ± 10mm
+[ ] Check drive pulley and belt for debris
+[ ] Test emergency pull cord (quick check — no need to trigger)
+[ ] Check gearbox oil level — dipstick
+[ ] Listen for unusual roller noise
+[ ] Log runtime hours
+
+LEVEL A — WEEKLY (Operator)
+----------------------------
+[ ] Clean conveyor frame and belt underside
+[ ] Inspect all carry rollers — spin by hand
+[ ] Check belt tension — visual and deflection check
+[ ] Lubricate return roller bearings (if grease nipple type)
+
+LEVEL B — MONTHLY (Maintenance Technician)
+------------------------------------------
+[ ] Measure belt tension with tension meter
+[ ] Inspect drive and tail pulley lagging condition
+[ ] Check all roller bearing temperatures
+[ ] Verify speed sensor reading vs actual speed
+[ ] Inspect belt fasteners/joints for condition
+[ ] Check gearbox oil — look for water or metal contamination
+[ ] Test all safety devices — pull cords, E-STOP buttons
+[ ] Check photocell alignment and cleanliness
+
+LEVEL C — QUARTERLY (Senior Technician)
+----------------------------------------
+[ ] Replace any seized or noisy rollers
+[ ] Regrease all sealed roller bearings
+[ ] Align conveyor frame squareness
+[ ] Check and adjust belt tracking mechanism
+[ ] Measure belt thickness — replace if < 70% original
+[ ] Gearbox oil analysis sample
+
+LEVEL D — ANNUAL OVERHAUL (Specialist)
+----------------------------------------
+[ ] Full belt replacement (or NDT inspection)
+[ ] Gearbox overhaul or replacement
+[ ] Replace drive and tail pulley bearings
+[ ] Renew all roller sets if > 5 years old
+[ ] Electrical inspection of control panel and cables
+
+=========================================================
+MACHINE 4: INDUSTRIAL BOILER (BLR-004)
+=========================================================
+
+LEVEL A — DAILY (Certified Boiler Operator)
+---------------------------------------------
+[ ] Check and record water level (3x per shift)
+[ ] Record steam pressure, temperature, fuel pressure
+[ ] Perform surface blowdown (once per shift)
+[ ] Check chemical dosing — refill if < 30%
+[ ] Check burner flame appearance (blue, steady)
+[ ] Inspect all gauges for correct reading
+[ ] Check for visible steam or water leaks
+[ ] Test low water level alarm (once per day)
+[ ] Submit daily boiler log to supervisor (mandatory)
+
+LEVEL A — WEEKLY (Certified Boiler Operator)
+---------------------------------------------
+[ ] Perform bottom blowdown
+[ ] Test safety valve by manual lift
+[ ] Check feedwater pH and conductivity
+[ ] Clean burner igniter electrode
+[ ] Inspect flue gas damper operation
+[ ] Check boiler room ventilation
+
+LEVEL B — MONTHLY (Maintenance Technician)
+------------------------------------------
+[ ] Full water analysis (TDS, pH, hardness, O2)
+[ ] Inspect burner nozzle and atomizer
+[ ] Check combustion — CO2%, O2%, flue gas temp
+[ ] Clean UV flame detector
+[ ] Inspect and clean FD fan impeller
+[ ] Check all safety valve seating (no passing)
+[ ] Check feedwater pump mechanical seal
+
+LEVEL C — QUARTERLY (Senior Technician)
+----------------------------------------
+[ ] Internal inspection of boiler furnace (cooled down)
+[ ] Clean boiler tubes — fire side (soot blowing + brush)
+[ ] Chemical descaling of water side
+[ ] Calibrate all pressure transmitters
+[ ] Test and certify all safety valves
+[ ] Combustion analyzer check — full tuning
+[ ] BMS control system function test
+
+LEVEL D — ANNUAL STATUTORY INSPECTION (Boiler Inspector)
+---------------------------------------------------------
+[ ] Full internal and external inspection per IBR/IS 2825
+[ ] Hydraulic pressure test (1.5 × working pressure)
+[ ] Thickness testing of boiler shell and tubes
+[ ] Safety valve certification
+[ ] Statutory inspection certificate renewal
+[ ] Update boiler register
+NOTE: Boiler CANNOT be operated without valid inspection certificate.
+
+=========================================================
+MACHINE 5: ROBOTIC ARM (ROB-005)
+=========================================================
+
+LEVEL A — DAILY (Robot Operator)
+----------------------------------
+[ ] Check robot for visible damage or cable wear
+[ ] Verify safety cell gate interlocks function
+[ ] Test E-STOP buttons on all sides of cell
+[ ] Check teach pendant battery level (> 30%)
+[ ] Verify end-effector condition (gripper/torch)
+[ ] Check compressed air supply to gripper
+[ ] Review alarm log on controller display
+
+LEVEL A — WEEKLY (Robot Operator)
+-----------------------------------
+[ ] Clean robot arm exterior
+[ ] Inspect all cable conduits for wear
+[ ] Check and clean vision camera lens (if equipped)
+[ ] Verify light curtain operation — break beam test
+[ ] Back up all programs to USB
+
+LEVEL B — MONTHLY (Maintenance Technician)
+------------------------------------------
+[ ] Check all joint gearbox oil levels
+[ ] Inspect wrist joint for play or backlash
+[ ] Verify TCP calibration with reference point
+[ ] Check controller cabinet cooling fans
+[ ] Inspect solenoid valve function — gripper open/close
+[ ] Check all axis motor connector tightness
+[ ] Test safety relay and safety PLC function
+[ ] Review battery voltage (controller backup)
+
+LEVEL C — QUARTERLY (Senior Technician)
+----------------------------------------
+[ ] Replace joint gearbox oil (all 6 joints)
+[ ] Full TCP recalibration
+[ ] Check and adjust arm zero positions (mastering)
+[ ] Thermographic scan of controller cabinet
+[ ] Replace teach pendant battery if < 50% capacity
+[ ] Inspect all joint seals for oil weeping
+
+LEVEL D — ANNUAL OVERHAUL (Robot Specialist/OEM)
+-------------------------------------------------
+[ ] Full mastering (zero position calibration) — all joints
+[ ] Wrist gearbox overhaul (J4/J5/J6)
+[ ] Replace all controller backup batteries
+[ ] Motor insulation test — all 6 axes
+[ ] Safety system certification test
+[ ] Update robot firmware if recommended
+[ ] Full program backup and verification
+
+=========================================================
+MAINTENANCE HISTORY TEMPLATE
+=========================================================
+Date:
+Machine ID:
+Level:
+Technician Name:
+Tasks Completed:
+Parts Replaced:
+Issues Found:
+Next Due Date:
+Supervisor Sign-off:

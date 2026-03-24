@@ -1,0 +1,115 @@
+STANDARD OPERATING PROCEDURE
+Machine: Industrial Steam Boiler
+Machine ID: BLR-004
+Document No: SOP-BLR-004
+Version: 3.0
+Effective Date: 2024-03-01
+Department: Utilities & Steam Generation
+Regulatory Ref: IBR 1950, IS 2825
+
+=========================================================
+1. PURPOSE
+=========================================================
+This SOP defines procedures for the safe operation of the Industrial Steam Boiler
+(BLR-004). Improper boiler operation is a life-safety hazard. Only certified
+boiler operators may operate this equipment.
+
+=========================================================
+2. REQUIRED PPE
+=========================================================
+- Heat-resistant gloves (mandatory)
+- Face shield
+- Fire-retardant coveralls
+- Safety boots
+- Hearing protection near burner area
+
+=========================================================
+3. PRE-STARTUP CHECKLIST
+=========================================================
+Step 1: Verify water level in sight glass — must be between L and H marks.
+Step 2: Check chemical dosing tank levels (anti-scale, oxygen scavenger).
+Step 3: Inspect all safety valves — must move freely (manual lift test).
+Step 4: Check fuel supply pressure (gas: 100–200 mbar).
+Step 5: Verify all drain and blowdown valves are closed.
+Step 6: Confirm stack damper is open.
+Step 7: Check burner igniter electrode condition.
+Step 8: Verify steam pressure gauge reads zero (cold start).
+Step 9: Sign pre-startup checklist and submit to shift supervisor.
+
+=========================================================
+4. STARTUP PROCEDURE (COLD START)
+=========================================================
+Step 1: Fill boiler to normal water level using feedwater pump.
+Step 2: Open air vent valve to purge air from steam space.
+Step 3: Start forced draft (FD) fan — purge furnace for 5 minutes.
+Step 4: Ignite pilot burner.
+Step 5: Open main fuel valve slowly — confirm flame on CCTV.
+Step 6: Raise steam pressure gradually (max 1 bar per 5 minutes).
+Step 7: Close air vent when steam begins flowing (approx. 0.5 bar).
+Step 8: Bring boiler to operating pressure: 8–10 bar (approx. 45–60 min).
+Step 9: Open steam supply valve to process gradually.
+
+=========================================================
+5. MONITORING PARAMETERS
+=========================================================
+| Parameter             | Normal Range      | Warning           | Alarm / Trip      |
+|-----------------------|-------------------|-------------------|-------------------|
+| Steam Pressure        | 7 – 10 bar        | > 10.5 bar        | > 11 bar (trip)   |
+| Water Level           | 50 – 70% gauge    | < 30% or > 85%    | < 15% (trip)      |
+| Flue Gas Temp         | 180 – 240 °C      | > 260 °C          | > 300 °C          |
+| Fuel Pressure (Gas)   | 100 – 200 mbar    | < 80 mbar         | < 60 mbar (trip)  |
+| Feedwater Temp        | 80 – 105 °C       | < 70 °C           | < 60 °C           |
+| O2 in Flue Gas        | 2 – 5 %           | < 1% or > 8%      | < 0.5%            |
+| Flame Signal          | Strong (green)    | Weak (amber)      | No flame (trip)   |
+
+=========================================================
+6. BLOWDOWN PROCEDURE (Daily)
+=========================================================
+WARNING: Wear full PPE. Blowdown involves high-pressure steam and water.
+Step 1: Ensure water level is at HIGH mark before blowdown.
+Step 2: Open bottom blowdown valve slowly (surface blowdown first).
+Step 3: Hold open for 3–5 seconds only.
+Step 4: Close valve firmly.
+Step 5: Check water level — refill if needed via feedwater pump.
+Step 6: Log time and duration of blowdown in logbook.
+
+=========================================================
+7. SHUTDOWN PROCEDURE
+=========================================================
+Step 1: Close main steam supply valve.
+Step 2: Reduce fuel input to minimum.
+Step 3: Shut off fuel supply — flame extinguishes.
+Step 4: Run FD fan for 5 minutes post-shutdown (furnace purge).
+Step 5: Allow pressure to drop naturally — do not force cool.
+Step 6: Maintain water level above LOW mark during cooldown.
+Step 7: Close all valves when pressure reaches 0 bar.
+Step 8: Log shutdown time.
+
+=========================================================
+8. SAFETY TRIPS (AUTO-SHUTDOWN)
+=========================================================
+The boiler will AUTOMATICALLY SHUTDOWN (lockout) if:
+- Steam pressure > 11 bar (safety valve lifts + burner trips)
+- Water level < 15% (low-low water trip)
+- Flame failure (no flame signal for > 5 seconds)
+- Fuel pressure < 60 mbar
+- FD fan failure
+
+After a safety trip: DO NOT restart without identifying and clearing the cause.
+Log the trip in the incident register and notify the boiler inspector.
+
+=========================================================
+9. COMMON ERROR CODES
+=========================================================
+E31 — Low Water Level: Feed water immediately. Check feedwater pump.
+E32 — High Steam Pressure: Reduce firing rate. Check demand valve.
+E33 — Flame Failure: Check fuel supply, igniter, and flame detector.
+E34 — FD Fan Fault: Check fan motor and impeller. Do not fire without FD fan.
+E35 — High Flue Gas Temp: Check for scale buildup in tubes. Schedule tube cleaning.
+
+=========================================================
+10. REVISION HISTORY
+=========================================================
+v1.0 — Initial release
+v2.0 — Added regulatory references and auto-trip section
+v3.0 — Updated blowdown procedure, added O2 monitoring parameter

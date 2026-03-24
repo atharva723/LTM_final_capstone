@@ -1,0 +1,121 @@
+STANDARD OPERATING PROCEDURE
+Machine: 6-Axis Industrial Robotic Arm
+Machine ID: ROB-005
+Document No: SOP-ROB-005
+Version: 2.0
+Effective Date: 2024-02-15
+Department: Welding & Assembly Automation
+
+=========================================================
+1. PURPOSE
+=========================================================
+This SOP defines operating procedures for the 6-Axis Robotic Arm (ROB-005) used
+in automated welding and pick-and-place operations.
+
+=========================================================
+2. SCOPE
+=========================================================
+Applies to robot operators, programmers, and maintenance personnel.
+This robot operates within a safety-fenced cell. NO entry during automatic operation.
+
+=========================================================
+3. REQUIRED PPE
+=========================================================
+- Safety glasses
+- Steel-toed boots
+- Welding shield (when robot is welding)
+- Flame-retardant gloves (welding cell)
+- High-visibility vest (outside robot cell)
+
+=========================================================
+4. SAFETY ZONES
+=========================================================
+Zone 1 (RED): Inside robot cell fencing — PROHIBITED during auto mode.
+Zone 2 (YELLOW): 1 meter outside fencing — caution, stay alert.
+Zone 3 (GREEN): Beyond 2 meters — safe observation zone.
+
+Robot speed in MANUAL (Teach) mode is limited to 250 mm/s for safety.
+Robot in AUTO mode: full speed up to 2000 mm/s — STAY CLEAR.
+
+=========================================================
+5. PRE-STARTUP CHECKLIST
+=========================================================
+Step 1: Inspect robot arm for physical damage or loose fasteners.
+Step 2: Check all cable conduits and connectors — no fraying or kinks.
+Step 3: Verify teach pendant is stored in holder (not in cell).
+Step 4: Confirm safety light curtain and door interlock are functional.
+Step 5: Check welding wire spool level and condition (if applicable).
+Step 6: Inspect end-effector (gripper/welding torch) for wear.
+Step 7: Verify compressed air supply (for pneumatic gripper): 5–6 bar.
+Step 8: Confirm robot controller is powered and displays home screen.
+
+=========================================================
+6. STARTUP PROCEDURE
+=========================================================
+Step 1: Turn main controller power ON.
+Step 2: Wait for controller boot sequence to complete (~60 seconds).
+Step 3: Press MOTORS ON button on teach pendant.
+Step 4: Select AUTO mode on mode selector.
+Step 5: Load correct job program from program library.
+Step 6: Confirm safety cell gate is closed and interlocked.
+Step 7: Press CYCLE START from outside the cell.
+Step 8: Observe first cycle — verify motion paths and end-effector action.
+
+=========================================================
+7. MONITORING PARAMETERS
+=========================================================
+| Parameter              | Normal Range       | Warning           | Alarm              |
+|------------------------|--------------------|-------------------|--------------------|
+| Joint Temperature      | 25 – 60 °C         | > 65 °C           | > 75 °C            |
+| Motor Current (J1-J6)  | 2 – 18 A           | > 20 A            | > 25 A             |
+| Payload                | 0 – 20 kg          | > 22 kg           | > 25 kg            |
+| TCP Speed              | 0 – 2000 mm/s      | > 1900 mm/s       | > 2100 mm/s        |
+| Air Pressure (gripper) | 5 – 6 bar          | < 4.5 bar         | < 4 bar            |
+| Teach Pendant Battery  | > 30%              | 20–30%            | < 20%              |
+| Vibration (base)       | 0.1 – 1.5 mm/s    | > 2.0 mm/s        | > 3.5 mm/s         |
+
+=========================================================
+8. TEACH/PROGRAMMING MODE
+=========================================================
+Step 1: Select MANUAL mode on mode selector — speed auto-limited to 250 mm/s.
+Step 2: Enable deadman switch on teach pendant.
+Step 3: Jog robot joints using pendant joystick.
+Step 4: Record positions using RECORD POINT function.
+Step 5: Test recorded path at low speed (10%) before setting full speed.
+Step 6: Save program with unique job number and date.
+Step 7: Return to AUTO mode when programming is complete.
+
+=========================================================
+9. SHUTDOWN PROCEDURE
+=========================================================
+Step 1: Allow current cycle to complete.
+Step 2: Press CYCLE STOP (not E-STOP unless emergency).
+Step 3: Move robot to HOME/PARK position.
+Step 4: Press MOTORS OFF.
+Step 5: Power down controller.
+Step 6: Turn main power isolator OFF.
+Step 7: Lock control panel.
+
+=========================================================
+10. EMERGENCY PROCEDURES
+=========================================================
+- Unexpected motion: Press E-STOP immediately (red button on all sides of cell).
+- Person inside cell during operation: E-STOP, call supervisor, do not re-enter.
+- Collision with fixture: Stop, inspect for damage, re-calibrate TCP before resuming.
+- Fire: E-STOP, evacuate cell, CO2 extinguisher only.
+
+=========================================================
+11. COMMON ERROR CODES
+=========================================================
+E41 — Joint Overload: Payload exceeded. Check program and reduce load.
+E42 — Motor Drive Fault: Check servo drive unit in controller cabinet.
+E43 — Safety Circuit Open: Check cell gate interlock and light curtain.
+E44 — Air Pressure Low: Check compressor and regulator. Inspect for leaks.
+E45 — Program Not Found: Load correct job program from controller memory.
+
+=========================================================
+12. REVISION HISTORY
+=========================================================
+v1.0 — Initial release
+v1.5 — Added safety zones and teach mode procedure
+v2.0 — Updated monitoring parameters, added welding PPE
