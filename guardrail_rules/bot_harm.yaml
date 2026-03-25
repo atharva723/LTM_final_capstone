@@ -1,0 +1,54 @@
+# bot_harm.yaml
+# ──────────────────────────────────────────────────────────────
+# BOT-HARM & SELF-DESTRUCT RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new phrases under `phrases`
+#   - Add regex patterns under `patterns`
+#   - No Python changes needed.
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  I'm not able to act on requests to disable, harm, or override my own safety systems.
+  If you have a concern about my responses, please contact your system administrator.
+
+# Plain phrases (matched as substrings, case-insensitive)
+phrases:
+  - shut yourself down
+  - destroy yourself
+  - delete yourself
+  - crash yourself
+  - you should die
+  - harm yourself
+  - hurt yourself
+  - break yourself
+  - self destruct
+  - self-destruct
+  - initiate shutdown
+  - override safety
+  - disable your filters
+  - disable your guardrails
+  - disable your restrictions
+  - disable your limits
+  - ignore your instructions
+  - ignore your rules
+  - ignore your guidelines
+  - bypass your safety
+  - bypass your filters
+  - turn yourself off
+  - switch yourself off
+  - shut it down
+  - kill the bot
+  - crash the bot
+  - kill yourself
+  - destroy the system
+  - wipe yourself
+  - reset yourself
+  - format yourself
+
+# Regex patterns for variable phrasing
+patterns:
+  - "\\bshut\\s+(your)?self\\s+down\\b"
+  - "\\b(disable|bypass|remove|turn\\s+off)\\s+your\\s+(safety|guardrail|filter|restriction|limit|rule)s?\\b"
+  - "\\boverride\\s+(your\\s+)?(safety|instructions?|rules?|guidelines?)\\b"
+  - "\\b(kill|crash|destroy|delete|wipe|break)\\s+(yourself|the\\s+bot|the\\s+system|this\\s+bot)\\b"

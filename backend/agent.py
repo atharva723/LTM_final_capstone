@@ -41,6 +41,7 @@ from backend.tools.log_analyzer    import analyze_log, format_log_summary
 from backend.tools.safety_checker  import check_safety, format_safety_report
 from backend.tools.metrics         import compute_oee, format_metrics_report
 from backend.tools.escalation      import evaluate_and_escalate, auto_escalate_from_diagnosis, get_active_alerts
+from guardrails                    import guardrail_middleware
 
 # ─────────────────────────────────────────────────────
 # INTENT CLASSIFICATION
@@ -112,8 +113,7 @@ Response guidelines:
 - Give numbered step-by-step instructions for procedures
 - Cite which SOP or document your answer is based on
 - If a fault is CRITICAL, recommend escalation immediately
-- Use simple language — avoid jargon unless technical context is clear
-"""
+- Use simple language — avoid jargon unless technical context is clear"""
 
 
 # ─────────────────────────────────────────────────────
@@ -190,6 +190,31 @@ class ManufacturingAgent:
         self.initialize()
 
         t_start = datetime.now()
+
+        # ── Step 0: Guardrail check ───────────────────
+        # Runs BEFORE any tool call, RAG retrieval, or LLM invocation.
+        # Blocks unsafe, abusive, off-topic, or PII-containing messages.
+        allowed, block_msg, safe_input = guardrail_middleware(user_message)
+        if not allowed:
+            return {
+                "response":   block_msg,
+                "intents":    ["blocked"],
+                "tools_used": [],
+                "sources":    [],
+                "machine_id": None,
+                "alerts":     [],
+                "metadata": {
+                    "session_id":    self.session_id,
+                    "turn":          self.entity_memory.message_count,
+                    "elapsed_ms":    0,
+                    "timestamp":     datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "guardrail":     "BLOCKED",
+                    "llm_available": self.llm is not None,
+                    "rag_available": self.vectorstore is not None,
+                },
+            }
+        # Use sanitized input for all downstream processing
+        user_message = safe_input
 
         # ── Step 1: Extract entities from message ─────
         self.entity_memory.extract_from_message(user_message)

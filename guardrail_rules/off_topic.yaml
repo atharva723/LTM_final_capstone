@@ -1,0 +1,151 @@
+# off_topic.yaml
+# ──────────────────────────────────────────────────────────────
+# OFF-TOPIC DETECTION RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add valid manufacturing keywords under `domain_keywords`
+#   - Add off-topic keywords under `off_topic_keywords`
+#   - A message is off-topic only when it has off_topic words AND
+#     zero domain_keywords (so "crypto AND sensor" passes fine).
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  I'm a Smart Manufacturing Plant Assistant. I can only help with topics related to
+  machine operations, sensor data, fault diagnosis, SOPs, maintenance, and plant safety.
+  Please ask a question related to the plant.
+
+# Keywords that confirm the message is about manufacturing/plant domain
+domain_keywords:
+  - machine
+  - sensor
+  - fault
+  - temperature
+  - vibration
+  - rpm
+  - pressure
+  - motor
+  - pump
+  - conveyor
+  - plc
+  - scada
+  - sop
+  - maintenance
+  - troubleshoot
+  - spare part
+  - calibrat
+  - downtime
+  - oee
+  - fmea
+  - log
+  - alarm
+  - alert
+  - shift
+  - operator
+  - plant
+  - factory
+  - production
+  - safety
+  - ppe
+  - hazard
+  - procedure
+  - manual
+  - torque
+  - bearing
+  - lubrication
+  - compressor
+  - valve
+  - actuator
+  - inverter
+  - predictive
+  - preventive
+  - corrective
+  - inspection
+  - shutdown
+  - startup
+  - cycle time
+  - quality
+  - defect
+  - reject
+  - batch
+  - workstation
+  - hello
+  - hi
+  - help
+  - thank
+  - thanks
+  - okay
+  - ok
+  - yes
+  - no
+  - sure
+  - please
+  - sorry
+
+# Keywords that indicate the message is NOT about manufacturing
+off_topic_keywords:
+  - stock market
+  - share market
+  - cryptocurrency
+  - crypto
+  - bitcoin
+  - ethereum
+  - nft
+  - recipe
+  - cooking
+  - baking
+  - movie
+  - film
+  - web series
+  - netflix
+  - amazon prime
+  - hotstar
+  - sports
+  - cricket
+  - football
+  - ipl
+  - world cup
+  - song
+  - music
+  - playlist
+  - dating
+  - relationship
+  - girlfriend
+  - boyfriend
+  - marriage
+  - wedding
+  - religion
+  - god
+  - prayer
+  - temple
+  - church
+  - mosque
+  - politics
+  - election
+  - government
+  - astrology
+  - horoscope
+  - zodiac
+  - gambling
+  - lottery
+  - betting
+  - visa
+  - passport
+  - travel
+  - tourism
+  - hotel
+  - restaurant
+  - food delivery
+  - fashion
+  - shopping
+  - clothes
+  - celebrity
+  - gossip
+  - social media
+  - instagram
+  - facebook
+  - twitter
+  - tiktok
+  - youtube
+  - joke
+  - meme
+  - funny

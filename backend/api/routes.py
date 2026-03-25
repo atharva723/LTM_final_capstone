@@ -23,6 +23,7 @@ from backend.api.schemas import (
     AlertSummary, HealthResponse,
 )
 from backend.agent import get_agent, clear_session
+from guardrails    import guardrail_middleware
 
 router = APIRouter()
 
@@ -54,6 +55,19 @@ def chat(request: ChatRequest):
     Main chat endpoint. Accepts operator messages and returns
     AI responses with tool data + RAG context integrated.
     """
+    # Guardrail check — runs before agent pipeline
+    allowed, block_msg, _ = guardrail_middleware(request.message)
+    if not allowed:
+        return ChatResponse(
+            response   = block_msg,
+            intents    = ["blocked"],
+            tools_used = [],
+            sources    = [],
+            machine_id = None,
+            alerts     = [],
+            metadata   = {"guardrail": "BLOCKED", "session_id": request.session_id},
+        )
+
     try:
         agent  = get_agent(request.session_id)
         result = agent.chat(

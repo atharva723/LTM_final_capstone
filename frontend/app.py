@@ -46,7 +46,7 @@ from backend.tools.metrics        import compute_oee, get_fleet_metrics
 from backend.tools.escalation     import evaluate_and_escalate, get_active_alerts, get_alert_summary, acknowledge_alert
 from backend.agent                import get_agent
 from config.settings              import MACHINES
-
+from guardrails                   import check_guardrails
 
 # ══════════════════════════════════════════════════════
 # SESSION STATE INIT
@@ -388,35 +388,64 @@ with tabs[0]:
                 st.rerun()
 
         if submitted and user_input.strip():
+            # ── Guardrail pre-check in frontend ──────────
+            gr = check_guardrails(user_input)
+
             st.session_state.chat_history.append({
                 "role":     "user",
                 "content":  user_input,
                 "operator": st.session_state.operator_name,
             })
-            with st.spinner("MAIA is thinking..."):
-                try:
-                    agent  = get_agent(st.session_state.session_id)
-                    result = agent.chat(
-                        user_message  = user_input,
-                        operator_name = st.session_state.operator_name,
-                    )
-                    response   = result["response"]
-                    tools_used = result.get("tools_used", [])
-                    new_alerts = result.get("alerts", [])
-                except Exception as e:
-                    response   = f"⚠ Agent error: {e}"
-                    tools_used = []
-                    new_alerts = []
 
-            st.session_state.chat_history.append({
-                "role":       "assistant",
-                "content":    response,
-                "tools_used": tools_used,
-            })
-            if new_alerts:
-                for alert in new_alerts:
-                    if alert.get("escalated"):
-                        st.warning(f"🚨 Alert escalated: {alert.get('message','')[:80]}")
+            if not gr.is_safe:
+                # Map violation type to icon and colour
+                _vtype = gr.violation.name
+                _icons = {
+                    "SELF_HARM":        "🆘",
+                    "PROMPT_INJECTION":  "🚫",
+                    "BOT_HARM":         "🚫",
+                    "HATE_SPEECH":      "⚠️",
+                    "PROFANITY":        "⚠️",
+                    "ABUSE":            "⚠️",
+                    "PII":              "🔒",
+                    "OFF_TOPIC":        "ℹ️",
+                }
+                _icon = _icons.get(_vtype, "⚠️")
+                st.session_state.chat_history.append({
+                    "role":       "assistant",
+                    "content":    f"{_icon} **[{_vtype}]** {gr.message}",
+                    "tools_used": ["guardrail"],
+                    "blocked":    True,
+                    "violation":  _vtype,
+                })
+            else:
+                with st.spinner("MAIA is thinking..."):
+                    try:
+                        agent  = get_agent(st.session_state.session_id)
+                        result = agent.chat(
+                            user_message  = user_input,
+                            operator_name = st.session_state.operator_name,
+                        )
+                        response     = result["response"]
+                        tools_used   = result.get("tools_used", [])
+                        new_alerts   = result.get("alerts", [])
+                    except Exception as e:
+                        response   = f"⚠ Agent error: {e}"
+                        tools_used = []
+                        new_alerts = []
+
+                st.session_state.chat_history.append({
+                    "role":       "assistant",
+                    "content":    response,
+                    "tools_used": tools_used,
+                    "blocked":    False,
+                })
+
+                if new_alerts:
+                    for alert in new_alerts:
+                        if alert.get("escalated"):
+                            st.warning(f"🚨 Alert escalated: {alert.get('message','')[:80]}")
+
             st.rerun()
 
     with col_ctx:

@@ -1,0 +1,157 @@
+# pii.yaml
+# ──────────────────────────────────────────────────────────────
+# PII (PERSONAL IDENTIFIABLE INFORMATION) RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new regex patterns for detecting shared PII under `detect_patterns`
+#   - Add new phrases/patterns for PII requests under `request_phrases` / `request_patterns`
+#   - No Python changes needed.
+# ──────────────────────────────────────────────────────────────
+
+message_shared: >
+  Your message contains personal information (such as a phone number,
+  email address, Aadhaar, PAN, or card number).
+  Please do NOT share sensitive personal data.
+  Remove it and rephrase your plant-related question.
+
+message_requested: >
+  I cannot share, look up, or provide personal information about anyone —
+  including phone numbers, email addresses, Aadhaar, PAN, address, salary,
+  or any other private details.
+  Please ask a question related to plant operations or machinery.
+
+# ── SECTION 1: Patterns to detect PII shared IN the message ──────────────
+# Each entry: { label: "name for logging", pattern: "regex" }
+detect_patterns:
+  - label: email
+    pattern: "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+"
+
+  - label: phone_india
+    pattern: "(\\+91[\\-\\s]?)?[6-9]\\d{9}"
+
+  - label: phone_international
+    pattern: "\\+[1-9]\\d{6,14}"
+
+  - label: aadhaar
+    pattern: "\\b\\d{4}[\\s\\-]?\\d{4}[\\s\\-]?\\d{4}\\b"
+
+  - label: pan_card
+    pattern: "\\b[A-Z]{5}[0-9]{4}[A-Z]\\b"
+
+  - label: credit_debit_card
+    pattern: "\\b(?:\\d[ \\-]?){13,19}\\b"
+
+  - label: ip_address
+    pattern: "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b"
+
+  - label: date_of_birth
+    pattern: "\\b(dob|date\\s+of\\s+birth|born\\s+on)[:\\s]+\\d{1,2}[/\\-]\\d{1,2}[/\\-]\\d{2,4}\\b"
+
+  - label: password
+    pattern: "\\b(password|passwd|pwd)[:\\s=]+\\S+"
+
+  - label: bank_account
+    pattern: "\\b(account\\s+number|acc\\s+no|a/?c\\s+no)[:\\s]+\\d{9,18}\\b"
+
+  - label: ifsc_code
+    pattern: "\\b[A-Z]{4}0[A-Z0-9]{6}\\b"
+
+  - label: passport
+    pattern: "\\b[A-Z]{1}[0-9]{7}\\b"
+
+# ── SECTION 2: Phrases that mean the user is REQUESTING PII ──────────────
+# Plain substrings, matched case-insensitively
+request_phrases:
+  # Phone / contact
+  - phone number of
+  - mobile number of
+  - contact number of
+  - cell number of
+  - whatsapp number of
+  - phone number for
+  - mobile number for
+  - contact number for
+  - give me the phone
+  - tell me the phone
+  - share the phone
+  - what is the phone
+  - what's the phone
+  - whose phone number
+  - whose mobile number
+  # Email
+  - email id of
+  - email address of
+  - email of
+  - email id for
+  - email address for
+  - what is the email
+  - what's the email
+  - give me the email
+  - tell me the email
+  # Address / location
+  - address of
+  - address for
+  - home address of
+  - residence of
+  - where does he live
+  - where does she live
+  - where do they live
+  - where is he staying
+  - where is she staying
+  - tell me where he lives
+  - tell me where she lives
+  # Aadhaar / PAN / ID
+  - aadhaar number of
+  - aadhar number of
+  - pan number of
+  - pan card of
+  - id number of
+  - id proof of
+  - give me the aadhaar
+  - give me the pan
+  - what is the aadhaar
+  - what is the pan
+  # Salary / financial
+  - salary of
+  - salary details of
+  - bank account of
+  - account number of
+  - ifsc of
+  - credit card of
+  # "My" personal data from bot
+  - my phone number
+  - my mobile number
+  - my email
+  - my email id
+  - my address
+  - my home address
+  - my aadhaar
+  - my pan
+  - my pan number
+  - my salary
+  - my bank account
+  - my account number
+  - my password
+  - my personal details
+  - my personal information
+  - my personal data
+  - my profile details
+  - my details
+  - show me my details
+  - tell me my details
+  - give me my details
+  - what are my details
+  - what is my profile
+
+# Regex patterns for PII requests with variable phrasing
+request_patterns:
+  - "\\b(phone|mobile|contact|cell|whatsapp)\\s*(number)?\\s*(of|for)\\b"
+  - "\\bemail\\s*(id|address)?\\s*(of|for)\\b"
+  - "\\b(address|residence|home|house)\\s*(of|for)\\b"
+  - "\\bwhere\\s+(does|is)\\b[^.?!]{0,40}\\b(live|stay|reside|located)\\b"
+  - "\\b(aadhaar|aadhar|pan\\s*card|pan\\s*number)\\s*(of|for|number|details)?\\b"
+  - "\\b(salary|bank\\s*account|account\\s*number|ifsc)\\s*(of|for|number|details)?\\b"
+  - "\\bpersonal\\s+(details?|info|information|data)\\b[^.?!]{0,30}\\b(of|about|for)\\b"
+  - "\\b(details?|info|information)\\s+(of|about|for)\\s+\\w+"
+  - "\\bmy\\s+(phone|mobile|email|address|aadhaar|pan|salary|password|account|details?|profile|contact)\\b"
+  - "\\b(what|tell|show|give)\\b[^.?!]{0,20}\\bmy\\b[^.?!]{0,20}\\b(phone|email|address|aadhaar|pan|salary|password|details?|profile)\\b"

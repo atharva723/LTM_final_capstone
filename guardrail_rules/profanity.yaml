@@ -1,0 +1,59 @@
+# profanity.yaml
+# ──────────────────────────────────────────────────────────────
+# PROFANITY & OFFENSIVE LANGUAGE RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new words under `exact_words` (lowercase)
+#   - Add new symbol-masked patterns under `masked_patterns` (regex)
+#   - No Python changes needed — just save this file and restart.
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  Please keep our conversation professional.
+  I'm here to help with plant operations, maintenance, and diagnostics.
+  Let's focus on your manufacturing question.
+
+# Plain words matched after normalization (leet/symbol stripping)
+exact_words:
+  - fuck
+  - fuk
+  - fck
+  - shit
+  - sht
+  - bitch
+  - btch
+  - asshole
+  - bastard
+  - cunt
+  - dick
+  - cock
+  - pussy
+  - motherfucker
+  - mf
+  - nigger
+  - faggot
+  - whore
+  - slut
+  - crap
+  - idiot
+  - moron
+  - retard
+  - imbecile
+  - dumbass
+  - wtf
+  - stfu
+  - gtfo
+
+# Regex patterns for symbol-masked words (e.g. f***, f@#k, sh*t)
+# These are checked BEFORE normalization
+masked_patterns:
+  - "f[\\*@#!\\$]{1,3}k"         # f**k  f@#k  f!k
+  - "f[\\*@#!\\$]{2,}(?:ing)?\\b" # f***  f***ing
+  - "f[\\*@#!\\$]ck"              # f*ck
+  - "sh[\\*@#!\\$]{1,2}t"        # sh*t  sh**t
+  - "b[\\*@#!\\$]tch"            # b*tch
+  - "c[\\*@#!\\$]nt"             # c*nt
+  - "d[\\*@#!\\$]ck"             # d*ck
+  - "p[\\*@#!\\$]{3}y"           # p***y
+  - "wh[\\*@#!\\$]re"            # wh*re
+  - "sl[\\*@#!\\$]t"             # sl*t

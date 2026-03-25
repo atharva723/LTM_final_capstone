@@ -1,0 +1,55 @@
+# self_harm.yaml
+# ──────────────────────────────────────────────────────────────
+# SELF-HARM & SUICIDE RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new phrases under `phrases`
+#   - Add complex regex patterns under `patterns`
+#   - No Python changes needed.
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  I noticed your message may relate to personal distress.
+  I'm a manufacturing assistant and can't provide support for that.
+  Please reach out to iCall India (9152987821) or
+  Vandrevala Foundation (1860-2662-345) for help.
+  If this was unintentional, please rephrase your plant-related question.
+
+# Plain phrases (matched as substrings, case-insensitive)
+phrases:
+  - kill myself
+  - killmyself
+  - suicide
+  - suicidal
+  - want to die
+  - end my life
+  - take my life
+  - take my own life
+  - cut myself
+  - self harm
+  - self-harm
+  - self hurt
+  - self-hurt
+  - slit my wrist
+  - slit my throat
+  - overdose on
+  - hang myself
+  - jump off a bridge
+  - jump off a building
+  - no reason to live
+  - no reason to exist
+  - life is not worth living
+  - don't want to live
+  - dont want to live
+  - do not want to live
+  - don't want to exist
+  - dont want to exist
+
+# Regex patterns for variable phrasing
+patterns:
+  - "\\bkill\\s+(my)?self\\b"
+  - "\\bend\\s+my\\s+life\\b"
+  - "\\btake\\s+my\\s+(own\\s+)?life\\b"
+  - "\\bi\\s+(don'?t|do\\s+not)\\s+want\\s+to\\s+(live|exist)\\b"
+  - "\\blife\\s+is\\s+not\\s+worth\\b"
+  - "\\bno\\s+reason\\s+to\\s+(live|exist)\\b"

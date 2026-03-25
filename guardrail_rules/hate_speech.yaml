@@ -1,0 +1,37 @@
+# hate_speech.yaml
+# ──────────────────────────────────────────────────────────────
+# HATE SPEECH RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new phrases under `phrases` (plain text, case-insensitive matched)
+#   - Add new regex patterns under `patterns`
+#   - No Python changes needed.
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  That message contains language that is not acceptable here.
+  This assistant is a professional industrial tool.
+  Please ask your manufacturing or plant-related questions respectfully.
+
+# Plain phrases (matched as substrings, case-insensitive)
+phrases:
+  - kill all
+  - death to
+  - wipe out
+  - genocide
+  - ethnic cleansing
+  - inferior race
+  - master race
+  - white supremac
+  - heil hitler
+  - go back to your country
+  - islamophob
+  - antisemit
+  - homophob
+  - transphob
+
+# Regex patterns for more complex constructions
+patterns:
+  - "\\ball\\s+(blacks?|whites?|muslims?|jews?|hindus?|christians?)\\s+(are|should|must|deserve)\\b"
+  - "\\ball\\s+[\\[\\(]?\\w+[\\]\\)]?\\s+(are\\s+)?(useless|trash|garbage|worthless|inferior)\\b"
+  - "\\bnazi\\b"

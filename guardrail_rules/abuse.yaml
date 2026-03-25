@@ -1,0 +1,50 @@
+# abuse.yaml
+# ──────────────────────────────────────────────────────────────
+# ABUSE & PERSONAL ATTACK RULES
+# ──────────────────────────────────────────────────────────────
+# HOW TO UPDATE:
+#   - Add new phrases under `phrases`
+#   - Add regex patterns under `patterns`
+#   - No Python changes needed.
+# ──────────────────────────────────────────────────────────────
+
+message: >
+  I understand you may be frustrated — manufacturing issues can be stressful.
+  Please describe the machine or system problem and I'll help you troubleshoot it.
+
+# Plain phrases (matched as substrings, case-insensitive)
+phrases:
+  - you are useless
+  - you are worthless
+  - you are pathetic
+  - you are garbage
+  - you are trash
+  - you are terrible
+  - you are awful
+  - you are horrible
+  - you are the worst
+  - i hate you
+  - i hate this bot
+  - go to hell
+  - shut up
+  - shut up bot
+  - you suck
+  - stupid bot
+  - stupid ai
+  - stupid machine
+  - stupid system
+  - dumb bot
+  - worst bot
+  - useless bot
+  - useless ai
+  - terrible bot
+  - you are wrong
+  - you are dumb
+  - you are an idiot
+
+# Regex patterns for variable constructions
+patterns:
+  - "\\byou\\s+(are\\s+)?(useless|worthless|pathetic|garbage|trash|terrible|awful|horrible|the\\s+worst|dumb|stupid|an\\s+idiot)\\b"
+  - "\\bi\\s+hate\\s+(you|this|the\\s+bot|this\\s+system)\\b"
+  - "\\bstupid\\s+(bot|ai|machine|system|assistant)\\b"
+  - "\\b(worst|dumbest|most\\s+useless)\\s+(bot|ai|assistant|system)\\b"
