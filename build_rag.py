@@ -1,5 +1,4 @@
-﻿# Build FAISS index script
-# ─────────────────────────────────────────────────────
+﻿# ─────────────────────────────────────────────────────
 # build_rag.py  (run this ONCE to build the vector store)
 #
 # USAGE:

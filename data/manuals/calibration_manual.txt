@@ -1,0 +1,168 @@
+MACHINE CALIBRATION & SPECIFICATIONS MANUAL
+Document No: MAN-CAL-001
+Version: 1.2
+Machines Covered: CNC-M01, HYD-P02, CVB-003
+Department: Maintenance Engineering & Quality
+
+=========================================================
+SECTION 1: CNC MILLING MACHINE (CNC-M01) — CALIBRATION
+=========================================================
+
+1. STARTUP PROCEDURE VERIFICATION
+─────────────────────────────────
+Before running any production job, operators must complete:
+Step 1: Power ON machine and wait for CNC controller boot (45 seconds).
+Step 2: Press MACHINE HOME — all three axes (X, Y, Z) return to zero position.
+Step 3: Load job-specific tool library from controller tool menu.
+Step 4: Set workpiece zero (G54 offset) using edge finder or tool probe.
+Step 5: Run DRY CYCLE with Feed Hold ON — verify tool paths are correct.
+Step 6: Set spindle speed as per job card (range: 500–8000 RPM).
+Step 7: Begin machining — monitor first pass closely for chatter or overload.
+Startup verification must be signed off by shift supervisor for new jobs.
+
+2. GEOMETRIC ACCURACY SPECIFICATIONS
+─────────────────────────────────────
+  X-axis straightness:     ≤ 0.010 mm per 300 mm travel
+  Y-axis straightness:     ≤ 0.010 mm per 300 mm travel
+  Z-axis straightness:     ≤ 0.008 mm per 150 mm travel
+  X-Y squareness:          ≤ 0.015 mm per 300 mm
+  Spindle runout (radial): ≤ 0.005 mm (measured at spindle nose)
+  Spindle runout (axial):  ≤ 0.003 mm
+  Backlash X:              ≤ 0.010 mm
+  Backlash Y:              ≤ 0.010 mm
+  Backlash Z:              ≤ 0.008 mm
+
+If any parameter exceeds specification, machine must be re-calibrated
+before production continues. Tag machine OUT OF SERVICE until cleared.
+
+3. TOOL LENGTH CALIBRATION PROCEDURE
+──────────────────────────────────────
+Step 1: Load tool in spindle.
+Step 2: Navigate to TOOL OFFSET page on controller.
+Step 3: Move Z-axis until tool touches calibration block surface.
+Step 4: Record Z position — enter as tool length offset in controller.
+Step 5: Verify by comparing measured length to actual tool length.
+Step 6: Tolerance: ±0.02 mm — re-measure if outside tolerance.
+Step 7: Document in calibration log with tool number, length, date.
+
+4. SPINDLE WARM-UP PROCEDURE
+──────────────────────────────
+Run spindle warm-up at start of shift or after idle > 4 hours:
+Step 1: Run spindle at 1000 RPM for 3 minutes.
+Step 2: Increase to 3000 RPM for 3 minutes.
+Step 3: Increase to 5000 RPM for 3 minutes.
+Step 4: Increase to maximum operating RPM for 2 minutes.
+Step 5: Check spindle temperature — must not exceed 50°C after warm-up.
+Warm-up prevents thermal expansion errors and extends bearing life.
+
+5. COOLANT SYSTEM CALIBRATION
+───────────────────────────────
+  Target coolant concentration: 8–10% (check with refractometer)
+  Coolant pH target:            8.5–9.5
+  Maximum bacterial count:      < 10^4 CFU/mL (monthly lab test)
+  Coolant flow at nozzle:       8–15 L/min
+  Coolant temperature:          ≤ 30°C (coolant unit thermostat setting)
+
+=========================================================
+SECTION 2: HYDRAULIC PUMP UNIT (HYD-P02) — SPECIFICATIONS
+=========================================================
+
+1. SYSTEM OPERATING SPECIFICATIONS
+─────────────────────────────────────
+  Maximum system pressure:    250 bar (working)
+  Relief valve set pressure:  280 bar
+  Hydraulic fluid type:       Mineral oil ISO VG 46
+  Reservoir capacity:         200 litres
+  Pump type:                  Axial piston variable displacement
+  Motor rating:               22 kW, 415V, 3-phase, 50 Hz
+  Maximum fluid temperature:  60°C continuous, 70°C peak
+  Filtration rating:          10 micron (return), 25 micron (suction)
+
+2. PRESSURE CALIBRATION PROCEDURE
+────────────────────────────────────
+Step 1: Install calibrated pressure gauge at test point TP-01.
+Step 2: Start pump and allow 5-minute warm-up at low pressure.
+Step 3: Slowly increase pressure to system setpoint using pressure-reducing valve.
+Step 4: Verify main gauge reading matches calibrated gauge ±2%.
+Step 5: Test PRV: increase pressure until PRV lifts — record lift pressure.
+        PRV must lift at 280 ± 5 bar.
+Step 6: Document calibration date, gauge serial number, readings.
+Calibration frequency: Quarterly, or after any PRV replacement.
+
+3. FLUID ANALYSIS PARAMETERS
+──────────────────────────────
+Monthly oil sample must be tested for:
+  Viscosity at 40°C:     44–48 cSt (ISO VG 46 spec)
+  Water content:         < 0.1%
+  Particle count:        ISO 4406 cleanliness ≤ 18/16/13
+  TAN (Total Acid Number): < 2.0 mg KOH/g
+  Metal content:         Fe < 20 ppm, Cu < 10 ppm
+If any parameter is out of range: drain and replace fluid immediately.
+
+=========================================================
+SECTION 3: CONVEYOR BELT SYSTEM (CVB-003) — SPECIFICATIONS
+=========================================================
+
+1. BELT TRACKING ADJUSTMENT PROCEDURE
+────────────────────────────────────────
+Conveyor belt must track within ±10 mm of center at all times.
+Step 1: Start conveyor at normal operating speed with no product load.
+Step 2: Observe belt position at tail pulley for 2 minutes.
+Step 3: If belt drifts LEFT: tighten RIGHT tracking bolt by 1/4 turn clockwise.
+Step 4: If belt drifts RIGHT: tighten LEFT tracking bolt by 1/4 turn clockwise.
+Step 5: Wait 30 seconds after each adjustment — observe new tracking position.
+Step 6: Repeat until belt runs centered within ±10 mm.
+Step 7: Maximum adjustment: 3 full turns from neutral (factory setting).
+Step 8: If belt cannot be centered within 3 turns: stop conveyor and contact
+        maintenance — frame may be out of square or belt may be damaged.
+Caution: Never adjust tracking while belt is stationary — results will be incorrect.
+
+2. BELT TENSION SPECIFICATION
+───────────────────────────────
+  Minimum belt tension:       800 N (below this: slip risk)
+  Maximum belt tension:       1200 N (above this: bearing overload)
+  Measurement method:         Tension meter at center span (mid-point)
+  Measurement frequency:      Monthly (B-level PM)
+  Adjustment method:          Tail pulley take-up bolts, equal tension both sides
+
+3. EMERGENCY STOP PROCEDURE
+─────────────────────────────
+Conveyor has three methods of emergency stopping:
+Method 1 — Pull Cord: Pull the red rope running along the conveyor side.
+  Belt stops within 3 seconds. Pull cord must be manually reset by twisting.
+  Test: Pull cord must be tested every shift — required safety check.
+Method 2 — E-STOP Button: Press red mushroom head button on control panel.
+  Belt stops immediately. Button must be twisted to release before restart.
+Method 3 — HMI Stop: Touch STOP button on HMI screen.
+  Belt decelerates over 5 seconds (controlled stop — preferred for product safety).
+After any emergency stop: investigate cause before restarting.
+All emergency stop activations must be logged in the shift report.
+
+4. SPEED AND LOAD SPECIFICATIONS
+──────────────────────────────────
+  Belt speed range:         0.2 – 1.5 m/s (set per production order)
+  Maximum belt load:        200 kg/m distributed load
+  Maximum single item:      50 kg at 0.5 m spacing
+  Drive motor rated power:  7.5 kW
+  Gearbox ratio:            1:25
+  Drive pulley diameter:    315 mm
+
+=========================================================
+SECTION 4: GENERAL CALIBRATION RECORDS
+=========================================================
+
+Calibration Log Template:
+  Date:
+  Machine ID:
+  Equipment Calibrated:
+  Calibration Standard Used:
+  Before Calibration Reading:
+  After Calibration Reading:
+  Specification Limit:
+  Pass / Fail:
+  Technician Name:
+  Next Calibration Due:
+  Supervisor Sign-off:
+
+All calibration records must be retained for minimum 3 years.
+Out-of-specification findings must be reported to QA immediately.

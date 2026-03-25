@@ -1,0 +1,193 @@
+FAILURE MODE AND EFFECTS ANALYSIS (FMEA)
+Document No: FMEA-001
+Version: 1.0
+Machines Covered: CNC-M01, HYD-P02, CVB-003
+Department: Maintenance Engineering
+
+=========================================================
+PURPOSE
+=========================================================
+This FMEA identifies potential failure modes for each machine,
+their effects, causes, and recommended controls. Used by
+maintenance engineers for risk-based maintenance planning.
+
+Risk Priority Number (RPN) = Severity × Occurrence × Detection
+  Severity:   1 (negligible) to 10 (catastrophic)
+  Occurrence: 1 (rare) to 10 (frequent)
+  Detection:  1 (always detected) to 10 (never detected)
+RPN > 100 requires immediate corrective action.
+
+=========================================================
+SECTION 1: CNC MILLING MACHINE (CNC-M01)
+=========================================================
+
+SUBSYSTEM: Spindle Assembly
+─────────────────────────────
+Failure Mode: Spindle Bearing Failure
+  Effect: Machine stops, tool breakage risk, part scrap
+  Cause: Inadequate lubrication, overload, end of bearing life
+  Severity: 8  Occurrence: 3  Detection: 4  RPN: 96
+  Current Controls: Vibration monitoring, temperature sensor, periodic bearing replacement
+  Recommended Action: Reduce PM interval to 1800h, add acoustic emission sensor
+  Error Code: E08
+
+Failure Mode: Spindle Motor Overload
+  Effect: Auto-shutdown, production loss
+  Cause: Dull tool, incorrect cutting parameters, chip packing
+  Severity: 6  Occurrence: 5  Detection: 2  RPN: 60
+  Current Controls: Motor current monitoring, operator training
+  Error Code: E01
+
+SUBSYSTEM: Axis Drive System
+─────────────────────────────
+Failure Mode: Servo Drive Fault
+  Effect: Axis stops, machine halts mid-cycle
+  Cause: Overheating, encoder fault, power fluctuation
+  Severity: 7  Occurrence: 3  Detection: 3  RPN: 63
+  Current Controls: Drive fault alarms, encoder cable check in PM
+  Error Code: E02
+
+Failure Mode: Linear Guideway Wear
+  Effect: Poor surface finish, dimensional inaccuracy
+  Cause: Inadequate lubrication, abrasive chips
+  Severity: 6  Occurrence: 2  Detection: 6  RPN: 72
+  Current Controls: Auto-lubrication system, periodic backlash check
+  Recommended Action: Thermal imaging of guideways during C-level PM
+
+SUBSYSTEM: Coolant System
+─────────────────────────────
+Failure Mode: Coolant Pump Failure
+  Effect: Tool overheating, fire risk, surface finish degradation
+  Cause: Blocked strainer, cavitation, impeller wear
+  Severity: 7  Occurrence: 3  Detection: 2  RPN: 42
+  Current Controls: Coolant flow sensor, low coolant alarm
+  Error Code: E03
+
+Failure Mode: Coolant Concentration Drift
+  Effect: Corrosion, bacterial growth, skin sensitization
+  Cause: Evaporation, water addition without concentration check
+  Severity: 5  Occurrence: 6  Detection: 5  RPN: 150  ← ACTION REQUIRED
+  Current Controls: Monthly concentration check
+  Recommended Action: Install inline refractometer, weekly check
+
+=========================================================
+SECTION 2: HYDRAULIC PUMP UNIT (HYD-P02)
+=========================================================
+
+SUBSYSTEM: Hydraulic Pump
+─────────────────────────────
+Failure Mode: Pump Cavitation
+  Effect: Rapid pump wear, noise, pressure instability
+  Cause: Low fluid level, blocked suction, cold oil viscosity
+  Severity: 8  Occurrence: 4  Detection: 3  RPN: 96
+  Current Controls: Low level alarm, suction strainer
+  Error Code: E16
+
+Failure Mode: Pump Internal Leakage (Bypass)
+  Effect: Reduced flow, slow actuator movement, overheating
+  Cause: Pump wear, contaminated fluid
+  Severity: 6  Occurrence: 3  Detection: 5  RPN: 90
+  Current Controls: Quarterly flow rate check, fluid analysis
+  Recommended Action: Track pump volumetric efficiency monthly
+
+SUBSYSTEM: Pressure Relief Valve
+─────────────────────────────────
+Failure Mode: PRV Stuck Closed
+  Effect: CATASTROPHIC overpressure, hose burst risk
+  Cause: Debris in seat, corrosion, long idle period
+  Severity: 10  Occurrence: 2  Detection: 3  RPN: 60
+  Current Controls: PRV manual lift test weekly, pressure alarm
+  Error Code: E11
+
+Failure Mode: PRV Stuck Open (Passing)
+  Effect: Cannot reach operating pressure, slow cycle times
+  Cause: Contamination in seat, spring fatigue
+  Severity: 5  Occurrence: 3  Detection: 2  RPN: 30
+  Current Controls: Pressure monitoring
+
+SUBSYSTEM: Hydraulic Hoses
+─────────────────────────────
+Failure Mode: Hose Burst (Catastrophic)
+  Effect: FATAL fluid injection injury risk, fire hazard
+  Cause: Abrasion, fatigue, pressure spike, age (>4 years)
+  Severity: 10  Occurrence: 2  Detection: 6  RPN: 120  ← ACTION REQUIRED
+  Current Controls: Visual hose inspection, age-based replacement
+  Recommended Action: Replace all hoses at 4-year interval regardless of condition
+  Error Code: E20
+
+SUBSYSTEM: Fluid Quality
+─────────────────────────────
+Failure Mode: Fluid Contamination (Particle)
+  Effect: Valve spool wear, pump wear, seal damage
+  Cause: Ingress via open reservoir, dirty filter, system wear
+  Severity: 7  Occurrence: 4  Detection: 4  RPN: 112  ← ACTION REQUIRED
+  Current Controls: Return filter 10 micron, quarterly fluid analysis
+  Recommended Action: Install offline filtration unit (kidney loop)
+
+=========================================================
+SECTION 3: CONVEYOR BELT SYSTEM (CVB-003)
+=========================================================
+
+SUBSYSTEM: Belt
+─────────────────────────────
+Failure Mode: Belt Misalignment (Tracking Off)
+  Effect: Belt edge damage, spillage, potential belt tear
+  Cause: Off-center loading, frame misalignment, worn tracking guides
+  Severity: 5  Occurrence: 6  Detection: 2  RPN: 60
+  Current Controls: Tracking sensor, operator visual check
+  Error Code: E23
+
+Failure Mode: Belt Slip on Drive Pulley
+  Effect: Reduced throughput, belt overheating
+  Cause: Low belt tension, worn lagging, overloading
+  Severity: 5  Occurrence: 4  Detection: 3  RPN: 60
+  Current Controls: Speed sensor (slip detection), tension check in PM
+  Error Code: E21
+
+Failure Mode: Belt Tear (Catastrophic)
+  Effect: Complete production stoppage, debris in product
+  Cause: Sharp object on belt, splice failure, foreign material
+  Severity: 9  Occurrence: 2  Detection: 5  RPN: 90
+  Current Controls: Belt tear detector, visual inspection
+  Error Code: E29
+
+SUBSYSTEM: Drive System
+─────────────────────────────
+Failure Mode: Gearbox Bearing Failure
+  Effect: Machine stoppage, extensive repair cost
+  Cause: Lubrication failure, overloading, end of life
+  Severity: 8  Occurrence: 2  Detection: 5  RPN: 80
+  Current Controls: Oil level check, vibration monitoring
+  Error Code: E25
+
+Failure Mode: Drive Motor Overload
+  Effect: Motor trips, production stops
+  Cause: Mechanical jam, belt overloaded, motor winding fault
+  Severity: 6  Occurrence: 4  Detection: 2  RPN: 48
+  Current Controls: Motor overload relay, current monitoring
+  Error Code: E22
+
+SUBSYSTEM: Safety Systems
+─────────────────────────────
+Failure Mode: Emergency Pull Cord Failure (Does Not Stop Belt)
+  Effect: CATASTROPHIC — operator entanglement, fatal injury
+  Cause: Cord slack, corroded switch, wiring fault
+  Severity: 10  Occurrence: 1  Detection: 2  RPN: 20
+  Current Controls: Daily pull cord test, monthly switch inspection
+  Recommended Action: Pull cord test must be logged every shift — mandatory
+
+=========================================================
+FMEA SUMMARY — HIGH RPN ITEMS (Action Required)
+=========================================================
+RPN > 100:
+  1. CNC-M01 Coolant Concentration Drift  RPN=150 → Install refractometer
+  2. HYD-P02 Hose Burst                   RPN=120 → 4-year mandatory replacement
+  3. HYD-P02 Fluid Contamination          RPN=112 → Add offline filtration
+
+RPN 90-100 (Monitor closely):
+  4. CNC-M01 Spindle Bearing Failure      RPN=96
+  5. HYD-P02 Pump Cavitation              RPN=96
+  6. CVB-003 Belt Tear                    RPN=90
+
+Document Owner: Maintenance Engineering Manager
+Next FMEA Review: 2025-06-01

@@ -362,17 +362,17 @@ with tabs[0]:
                           {msg['content'].replace(chr(10), '<br>')}
                         </div>""", unsafe_allow_html=True)
 
-        st.markdown('<div class="section-header">Quick Actions</div>', unsafe_allow_html=True)
-        qcols = st.columns(4)
-        quick_prompts = [
-            ("📡 Sensor Status",   f"Show me current sensor status of {st.session_state.active_machine}"),
-            ("🔧 Fault Help",      f"Error E01 on {st.session_state.active_machine} — what do I do?"),
-            ("🛡 Safety Briefing", f"What PPE do I need for maintenance on {st.session_state.active_machine}?"),
-            ("🗓 PM Status",       f"Is maintenance overdue on {st.session_state.active_machine}?"),
-        ]
-        for col, (label, prompt) in zip(qcols, quick_prompts):
-            if col.button(label, use_container_width=True):
-                st.session_state["_pending_chat"] = prompt
+        # st.markdown('<div class="section-header">Quick Actions</div>', unsafe_allow_html=True)
+        # qcols = st.columns(4)
+        # quick_prompts = [
+        #     ("📡 Sensor Status",   f"Show me current sensor status of {st.session_state.active_machine}"),
+        #     ("🔧 Fault Help",      f"Error E01 on {st.session_state.active_machine} — what do I do?"),
+        #     ("🛡 Safety Briefing", f"What PPE do I need for maintenance on {st.session_state.active_machine}?"),
+        #     ("🗓 PM Status",       f"Is maintenance overdue on {st.session_state.active_machine}?"),
+        # ]
+        # for col, (label, prompt) in zip(qcols, quick_prompts):
+        #     if col.button(label, use_container_width=True):
+        #         st.session_state["_pending_chat"] = prompt
 
         with st.form("chat_form", clear_on_submit=True):
             user_input = st.text_input(

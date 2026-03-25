@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-03-25 09:13:02",
+  "elapsed_s": 75.7,
+  "scorecard": [
+    {
+      "metric": "RAG Precision@4",
+      "score": 0.5735
+    },
+    {
+      "metric": "RAG Recall@4",
+      "score": 0.8529
+    },
+    {
+      "metric": "RAG Hit Rate@4",
+      "score": 1.0
+    },
+    {
+      "metric": "RAG MRR",
+      "score": 0.7843
+    },
+    {
+      "metric": "Fault Severity Accuracy",
+      "score": 1.0
+    },
+    {
+      "metric": "Fault Within 1 Level",
+      "score": 1.0
+    },
+    {
+      "metric": "Escalation Accuracy",
+      "score": 1.0
+    },
+    {
+      "metric": "Step Coverage",
+      "score": 0.8975
+    },
+    {
+      "metric": "ROUGE-L F1",
+      "score": 0.2396
+    },
+    {
+      "metric": "BLEU-1",
+      "score": 0.2073
+    },
+    {
+      "metric": "Anomaly Accuracy",
+      "score": 0.9062
+    },
+    {
+      "metric": "ALARM F1 Score",
+      "score": 1.0
+    }
+  ],
+  "pass_rate": 83.3,
+  "all_results": {
+    "rag": {
+      "mean_precision_at_k": 0.5735,
+      "mean_recall_at_k": 0.8529,
+      "mean_reciprocal_rank": 0.7843,
+      "hit_rate_at_k": 1.0,
+      "avg_latency_ms": 4251.4,
+      "total_test_cases": 17,
+      "k": 4,
+      "rag_available": true
+    },
+    "fault": {
+      "severity_accuracy": 1.0,
+      "severity_within_1_level": 1.0,
+      "escalation_accuracy": 1.0,
+      "avg_step_coverage": 0.8975,
+      "avg_latency_ms": 0.0,
+      "total_test_cases": 13,
+      "severity_correct_count": 13,
+      "escalation_correct_count": 13
+    },
+    "response_quality": {
+      "mean_bleu_1": 0.2073,
+      "mean_bleu_4": 0.0483,
+      "mean_rouge_l_f1": 0.2396,
+      "quality_rating": "Poor",
+      "avg_latency_ms": 86.1,
+      "total_test_cases": 7
+    },
+    "anomaly_detection": {
+      "accuracy": 0.9062,
+      "alarm_f1": 1.0
+    },
+    "latency": {
+      "sensor_fetch": true,
+      "fault_diagnose": true,
+      "spare_parts": true,
+      "maintenance": true,
+      "log_analyzer": true,
+      "safety_checker": true,
+      "metrics": true,
+      "agent_pipeline": true
+    },
+    "stress": {
+      "concurrent_polling": true,
+      "cache_effectiveness": 31.0,
+      "rapid_fault_diagnosis": true
+    }
+  }
+}

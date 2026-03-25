@@ -4,3 +4,6 @@ faiss-cpu
 fastapi
 uvicorn
 streamlit
+langchain-text-splitters
+langchain-community
+plotly

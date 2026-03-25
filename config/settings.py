@@ -18,6 +18,8 @@ RAG_DOCUMENT_DIRS = [
     DATA_DIR / "troubleshooting",
     DATA_DIR / "maintenance",
     DATA_DIR / "safety",
+    DATA_DIR / "fmea",
+    DATA_DIR / "manuals",
 ]
 
 # ── Ollama / LLM Settings ────────────────────────────
@@ -101,4 +103,3 @@ API_TITLE = "Manufacturing Assistant API"
 # ── Escalation Settings ──────────────────────────────
 ESCALATION_EMAIL         = "supervisor@plant.local"
 ESCALATION_SEVERITY      = "HIGH"   # escalate if severity >= this
-
